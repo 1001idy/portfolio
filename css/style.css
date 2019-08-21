@@ -1,0 +1,466 @@
+
+@import url(http://fonts.googleapis.com/earlyaccess/nanummyeongjo.css);
+@import url('https://fonts.googleapis.com/css?family=Montserrat&display=swap');
+* {
+  margin:0;
+  padding:0;
+}
+li, ul
+{
+  list-style: none;
+}
+#container
+{
+  margin:0;
+  padding:0;
+}
+a:link, a:hover, a:visited 
+{
+  color:#114559;
+  text-decoration:none;  
+  text-align: center;
+}
+a
+{
+  text-decoration: none;
+}
+header
+{
+  position: relative;
+  margin:0;
+  padding:0px;
+  width: 100%;
+  height: 150px;
+  background-color: white;
+}
+header h3 /*INDEX*/
+{
+  font-family: 'Montserrat', sans-serif, '돋움', '나눔고딕'; 
+  text-align: center;
+  font-size: 1.6em;
+  font-weight: lighter;
+  padding-top: 35px;
+  color: #114559;
+}
+header h5 /*CONTACT(웹크기에서 보여짐)*/
+{
+  display: none;
+}
+#openmenu /*햄버거버튼*/
+{
+  position: absolute;
+  right: 20px; 
+  top:35px;
+  width: 20px;
+  height: 40px;
+}
+#openmenu span
+{
+  display: block;
+  background: #114559;
+  width: 100%;
+  height: 2px;
+  margin-top: 5px;
+}
+.m_contact /*모바일 메뉴창*/
+{
+  background-color: pink;
+  position: absolute;
+  width: 100%;
+  height: 150px;
+  top:80px; left: 0;
+  display: none;
+  z-index: 100;
+}
+.m_contact p /*모바일 메뉴창 안에 CONTACT*/
+{
+  font-family: 'Montserrat', sans-serif, '돋움', '나눔고딕'; 
+  color: #114559;
+  margin:60px auto;
+  text-align: center;
+  font-size: 1rem;
+}
+
+#showpage /*포폴외에 다른거 보여주는 창*/
+{
+  display: none;
+  position: relative;
+  width: 100%;
+  height: auto;
+  border: 1px solid #eee;
+  background-color: lightgray;
+  vertical-align: center;
+}
+#show1
+{
+  text-align: center;
+  margin-bottom: 50px;
+}
+#showpage #show1 img /*스마일 이미지*/
+{
+  margin-top: 50px;
+  text-align: center;
+  border: 10px solid pink;
+  border-radius: 140px;
+}
+#showpage h1
+{
+  font-family: 'Montserrat', sans-serif;
+  text-align: center;
+  font-size: 3rem;
+  font-weight: bold;
+  text-align: center;
+  color: hotpink;
+  margin-bottom: 20px;
+}
+#showpage p
+{
+    font-size: 1.2rem;
+   margin-bottom: 10px;
+}
+
+#fp-nav, .fp-sr-only, .fp-slidesNav
+{
+  /*display: none;*/
+  visibility: hidden;
+}
+
+.section 
+{
+  padding: 0px;
+  margin : 0;
+}
+.section .slide
+{
+  width: 100%; height: 100%;
+  padding-bottom: -100px;
+}
+.section .slide img
+{
+  width: 100%; height: 60%;
+  margin: 0;
+  padding: 0;
+  vertical-align : bottom;
+}
+
+.section h1
+{
+  text-align: center;
+  display: block;
+  font-size: 1.3rem; 
+  font-family: 'Montserrat', sans-serif, '돋움', '나눔고딕'; 
+  font-weight: lighter; font-style: italic;
+  padding-bottom: 15px;
+}
+.section .slide a
+{
+  display:block;
+  position:relative;
+  width:100%;
+  height:100%;
+}
+
+.section .slide a:before
+{
+  display:block;
+  position:absolute;
+  top:0;
+  left:0;
+  z-index:10;
+  width:100%;
+  height:60%;
+  background:#114559;
+  content:"";
+  opacity:0; /*지금은 안보여는 투명상태*/
+  transition:all 0.2s;
+}
+.section .slide a:hover:before
+{
+  opacity:0.86; /*투명도가 조금 있는 색상보임*/
+}
+.section .txt
+{
+  font-family: 'Montserrat', sans-serif;
+  position:absolute;
+  top:27%;
+  left:37%;
+  z-index:20; /* 글자가 a:before 색상위로 올라감*/
+  opacity:0; /*완전 투명*/
+  transition:all 0.3s; /* all : 모든 속성을 변화 시킴  0.3s : 0.3초 만에 완결 */
+}
+.section .slide a:hover .txt /*마우스 올렸을때 글자투명도가 바뀌면서 보임
+*/
+{
+  opacity:1; /*완전불투명*/
+}
+.txt h4
+{
+  font-family: 'Montserrat', sans-serif;
+  margin-bottom:8px;
+  font-size:1.2rem;
+  color:#fff;
+  font-weight:normal;
+}
+.txt p
+{
+  font-family: 'Montserrat', sans-serif;
+  font-size:0.9rem;
+  color:#fff;
+}
+
+/* 푸터 */
+.footer {
+  clear: both;
+  width: 100%;
+  height: 40px;
+  background-color:#8c7069;
+  margin: 0;
+  padding: 0;
+}
+.footer .contact {
+  font-family: 'Montserrat', sans-serif;
+  color:white;
+  font-size: 0.7rem;
+  text-align: center;
+  line-height: 40px;
+  margin: 0;
+  padding: 0;
+}
+
+
+@media screen and (min-width:764px)/*탭용*/ {
+
+header
+{
+  float: left;
+  padding: 0;
+  width: 20%;
+  height: 100%;
+  overflow: hidden;
+}
+.w_menu
+{
+  padding-left: 10%;
+  padding-top: 17%;
+}
+header h3 /*INDEX*/
+{
+  font-size: 200%;
+  text-align: left;
+  margin-bottom: 45px;
+  font-weight: lighter;
+  margin-left: 10px;
+}
+
+header h5 /*CONTACT*/
+{
+  display: block;
+  font-size: 130%;
+  font-weight: lighter;
+  margin-left: 10px;
+}
+header p /*CONTACT*/
+{
+  display: none;
+}
+
+#openmenu, .m_contact /*웹에서는 햄버거버튼, 모바일 메뉴창 안보임*/
+{
+  display: none;
+}
+#showpage
+{
+  width: 70%;
+  height: 969px;
+  float: right;
+}
+#showpage #show1 img
+{
+  top: 5%;
+  left: 40%;
+}
+#fp-nav, .fp-sr-only, .fp-slidesNav
+{
+  visibility: visible;
+}
+#fullpage
+{
+  float: right;
+  width: 75%;
+  margin: 0 auto;
+  padding: 0;
+  padding-right: 3%;
+}
+#fullpage .section:nth-child(2) .slide, #fullpage .section:nth-child(3) .slide
+{
+  margin-top: 4%;
+}
+#fullpage .section:nth-child(4) .slide
+{
+  margin-top: 15%;
+}
+.section 
+{
+  margin: 0 auto;
+  width: 75%;
+}
+.section h1
+{
+  padding-top: 18%;
+}
+.section .slide
+{
+  padding-top: 8%;
+ 
+}
+.section .txt
+{
+  top: 24%; left: 40%;
+}
+.section .slide img
+{
+  width: 100%; height: 55%;
+}
+.section .slide a:before
+{
+  height: 55%;
+}
+/*.program-cols
+{
+  padding: 0px 0px 100px 50px;
+}
+.program-cols li
+{
+  float: left;
+  width: 48%;
+  padding: 1%;
+  background-color: lightgray;
+}
+.program 
+{
+  position: relative;
+  display: inline-block;
+  width: 25%;
+  float: right;
+  width: 100%; height: 100%;
+  background-color: pink;
+}
+.program img
+{
+ width: 80%; height:80%;
+}
+.program .txt
+{
+  top:40%;
+  left:40%;
+}*/
+
+.footer
+{
+  clear: both;
+}
+
+}
+
+@media screen and (min-width:1024px)/*웹용*/ {
+
+/*header h3, header h5
+{
+  margin-left: 25px;
+}
+header
+{
+  width: 15%;
+}*/
+#showpage
+{
+  width: 75%;
+}
+#fullpage
+{
+  margin: 0 auto;
+  width: 75%;
+}
+.section 
+{
+  width: 60%;
+}
+/*.section h1
+{
+  padding-top: 18%;
+}
+.section .txt
+{
+  top: 26%; left: 43%;
+}
+.section .slide img
+{
+  width: 100%; height: 60%;
+}
+.section .slide a:before
+{
+  height: 60%;
+}
+.section .slide
+{
+  padding-top: 4%;
+ 
+}*/
+
+
+
+}
+
+@media screen and (min-width:1400px)/*와이드용*/ {
+
+#showpage
+{
+  width: 78%;
+}
+#fullpage
+{
+  margin: 0 auto;
+  width: 75%;
+}
+.section 
+{
+  width: 50%;
+}
+.section .slide
+{
+  padding-top: 7%;
+}
+
+
+}
+
+@media screen and (min-width:1500px)/*와이드용*/ {
+
+header
+{
+  width: 15%;
+}
+
+#showpage
+{
+  width: 80%;
+}
+#fullpage
+{
+  margin: 0 auto;
+  width: 80%;
+}
+.section 
+{
+  width: 40%;
+}
+.section .slide
+{
+  padding-top: 5%;
+}
+.section .txt
+{
+  left: 43%;
+}
+
+}

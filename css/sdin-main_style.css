@@ -1,0 +1,479 @@
+*
+{
+	margin:0; padding:0;
+}
+ul, ol
+{
+	list-style:none;
+}
+a
+{
+	text-decoration:none;
+}
+#wrap
+{
+	min-width: 320px;
+}
+.m_gnb
+{
+	background-color: #fff;
+	width: 100%;
+	height: 50px;
+	position: fixed;
+	z-index: 600;
+}
+.gnb_lang
+{
+	float: right;
+	margin-top: 10px;
+	margin-right: 15px;
+}
+.gnb_lang li
+{
+	display: inline;
+	margin-right: 5px;
+}
+.gnb_logo a
+{
+	float: left;
+	display: block;
+	background-image: url('../img/sdinlogo.jpg');
+	background-repeat: no-repeat;
+	background-size: 100%;
+	margin-top: 5px;
+	margin-left: 10px;
+	width: 140px;
+	height: 90px;
+}
+.m_gnb .gnb_hambuger
+{
+	float:right;
+	width:29px;
+	margin-top:13px;
+	margin-right: 15px;
+	cursor:pointer;
+} 
+.m_gnb .gnb_hambuger span /*햄버거 버튼 선*/
+{
+	display:block;
+	width:100%;
+	height:4px;
+	background:#012740;
+	border-radius: 3px;
+}
+.m_gnb .gnb_hambuger span:nth-child(2)
+{
+	margin:6px 0;
+}
+.gnb_side /*모바일용 사이드 메뉴창*/
+{
+	background-color: black;
+	background-color: rgba(0, 0, 0, 0.8);
+	position:fixed; 
+	top:0; left:0; 
+	width:100%; 
+	height:100%;
+	z-index:300;
+	display: none;
+}
+.gnb_list
+{
+	position:fixed; 
+	top:0; right: -100px; 
+	width:100%; 
+	height:100%;
+	z-index:400;
+	overflow-y: scroll;
+} 
+.gnb_menu /*회사소개, 사업분야, 고객지원*/
+{
+	display:block; 
+	padding:20px;
+	border-bottom:1px solid #333;
+	background-image:url(../img/mob_gnb_arrow_down_w.png);
+	background-repeat:no-repeat; 
+	background-position: right 100px center;
+	background-size:16px auto;
+	font-size:18px; color:#fff;
+	font-weight: bold;
+}
+.intro_sub /*ABOUT,HISTORY,BUSSINESS,PRODUCT,BLUESERVICE,LOCATION,CUSTOMERCENTER*/
+{
+	display: none;
+}
+.intro_subList dl
+{
+	border-bottom:1px solid #333;
+	background-color:#222;
+}
+.intro_subList dl dt a
+{
+	display:block; padding:20px;
+	font-size:15px; color:#ddd;
+}
+.intro_subList .sub_add a /*business, product, blueservice*/
+{
+	background-image:url(../img/mob_gnb_arrow_down_g.png);
+	background-repeat:no-repeat; 
+	background-size:18px auto;
+	background-position:right 100px center;
+}
+.intro_subList dd /*사업분야 세 주제의 자식들*/
+{
+	background-color:#444;
+	display: none;
+}
+.intro_subList dd ul
+{
+	padding-top:10px; padding-bottom:10px;
+}
+.intro_subList dd ul li a
+{
+	display:block; 
+	padding-top:10px; padding-bottom:10px; padding-left:30px;
+	color:#999;
+}
+.gnb_x /*모바일용 메뉴바 창닫기 X 모양 */
+{
+	position:absolute; top:20px; left: 45px;
+	z-index: 400;
+}
+.gnb_x a
+{
+	display:block; width:30px; height:30px;
+	background-image:url(../img/btn_gnb_close.png);
+	background-repeat:no-repeat; background-position:center;
+	background-size:20px auto; transition:transform 0.5s;
+}
+.gnb_x a:hover
+{
+	transform:rotate(180deg);
+}
+
+.m_mainimg
+{
+	position: relative;
+	background-position: center;
+	background-size: cover;
+	background-image: url('../img/bgtex04.jpg');
+	background-repeat: no-repeat;
+	width: auto;
+	height: 700px;
+}
+.m_exp /*메인 불투명박스*/
+{	
+	display: block;
+	width: 93%;
+	height: 230px;
+	background-color: black;
+	background-color: rgba(0, 0, 0, 0.4);
+	position: absolute;
+	top:27%;
+	left:3%;
+}
+.exp_title /* Design the future 메인 슬로건 */
+{
+	padding: 10px;
+}
+.exp_title h1
+{
+	font-family: 'Open Sans', sans-serif;
+	font-size: 2.5rem;
+	color: white;
+	margin-top: 15px;
+	letter-spacing: -1px;
+}
+.exp_title span
+{
+	width: 100%;
+	display: block;
+	margin-top: 5px;
+	background-color: #0099ff;
+	height: 1.5px;
+}
+.exp_cont
+{
+	color: white;
+	padding: 10px;
+	line-height: 1.4;
+}
+.exp_cont h3
+{
+	font-size: 1.1rem;
+	font-weight: lighter;
+}
+.exp_cont p /*모바일에서는 상세내용 감춤*/
+{
+	display: none;
+}
+.m_w-high /*웹용 메뉴바*/
+{
+	display: none;
+}
+
+
+@media screen and (min-width:1050px) /*웹 영역*/
+{
+.gnb_hambuger, .m_m-side
+{
+	display: none;
+}
+.gnb_w-list
+{
+	position: absolute;
+	top:15px; left: 220px;
+}
+.m_w-high
+{	
+	display: block;
+}
+.m_w-gnbwrap
+{
+	width: 100%;
+	height: 49px;
+	border-bottom: 1px solid #eee;
+}
+.gnb_w-list .m1 /* 웹 - 회사소개, 사업분야, 고객지원*/
+{
+	float:left;
+	z-index:400;
+}
+.gnb_w-list .m1 a
+{
+	color: black;
+	display:block;
+	margin-left: 100px;
+	font-size: 0.9rem;
+}
+.gnb_w-list .m1 a:hover /*회사소개,사업분야,고객문의 마우스댈때 색상변경*/
+{
+	color:#004b7d;
+	font-weight: bold;
+}
+.gnb_w-lang /*다국어*/
+{
+	position: absolute;
+	top:15px; right: 13px;
+	float:right;
+}
+.gnb_w-lang li
+{
+	float:left; /*순서가 역순이 되지 않게 바꿈*/
+	z-index:400;
+}
+.gnb_w-lang a
+{
+	color: black;
+	display:block;
+	margin-right: 12px;
+	font-size: 0.8rem;
+}
+.gnb_w-high /*웹용 상단 흰색 메뉴바*/
+{
+	background-color: white;
+	position:absolute; 
+	top:50px; left:0; 
+	width:100%; 
+	height:auto;
+	z-index:300;
+	display: none;
+	border-bottom: 1px solid #eee;
+}
+.gnb_w-mi-con /*상단 메뉴바에 글자박스*/
+{
+	position: relative;
+	width: 100%;
+	margin-right: auto;
+	margin-left: auto;
+	margin-top: -10px;
+}
+.gnb_w-mi-con h2 /* 상단메뉴바 안에 왼쪽이름 /회사소개/ /사업분야/ /고객지원/ */
+{
+	margin-left: 180px;	
+	margin-top: 50px;
+}
+.sub_addwrap2 /*회사소개, 고객지원 파트*/
+{
+	margin-top: -30px;
+	margin-left: 350px;	
+	float: left;	
+	margin-bottom: 50px;
+	position: relative;
+}
+.sub_addwrap /*사업분야 파트*/
+{
+	width: 100%;
+	margin-top: -30px;
+	margin-left: 280px;	
+	float: 	left;	
+	margin-bottom: 35px;
+	position: relative;
+}
+.gnb_w-mi-con dl
+{
+	float:left;	
+	margin-left: 100px;
+}
+.gnb_w-mi-con .sub_add a /*business, product, blueservice*/
+{
+	color:black	;
+	display: block;
+	font-weight: bold;
+	text-indent: 60px;
+	margin-top: -45px;
+	font-size: 1.3rem;
+}
+
+.gnb_w-mi-con dl:hover .sub_add a, .gnb_w-mi-con .sub_add a:hover
+{
+	color: #004b7d;
+	font-weight: bold;
+}
+.gnb_w-mi-con .pic /*픽토그램 그레이 바탕*/
+{
+	display: inline-block;
+	width: 50px; height: 50px;
+	background-size: 100%;
+	background-repeat: no-repeat;
+}
+
+.gnb_w-mi-con .change /*픽토그램 블루 바탕*/
+{
+	display: inline-block;
+	width: 50px; height: 50px;
+	background-size: 100%;
+	background-repeat: no-repeat;
+	display: none;
+}
+.sub_addwrap span  /*사업분야 파트 픽토그램 밑으로 가는선*/
+{
+	position: absolute;
+	top: 57px; left: 124px;
+	width: 3px;
+	height: 80px;
+	background-color: #004b7d;
+	display: inline-block;
+	display: none;
+}
+.sub_addwrap .p2 span
+{
+	left: 382px;
+	display: none;
+}
+.sub_addwrap .p3 span
+{
+	left: 659px;
+	height: 110px;
+	display: none;
+}
+.sub_bus-con /* SHIPDID/BBIZON/BLUEBOT */
+{
+	text-indent: 60px;
+	margin-top: 7px;
+}
+.sub_prod-con /* BLUENET/BLUESECURITY/BLUEOFFICE*/
+{
+	text-indent: 60px;
+	margin-top: 7px;
+}
+.sub_serv-con /* ITMANAGE/SHIPSTORE/SAMSERV/SHIPDPDASP */
+{
+	text-indent: 60px;
+	margin-top: 7px;
+}
+.gnb_w-mi-con ul
+{
+	display: block;
+	float: left;	
+}
+.gnb_w-mi-con ul li
+{
+	margin-top: 10px;
+}
+.gnb_w-mi-con ul li a
+{
+	color: black;
+}
+.gnb_w-mi-con ul li a:hover
+{
+	color: #004b7d;
+}
+
+
+
+.m_main
+{
+	position: relative;
+	width: 100%;
+}
+.m_leftsec /*웹용 왼쪽 흰색 박스*/
+{
+	display: block;
+	float: left;
+	width:300px;
+	/*height: 900px;*/
+	height: 100%;
+	background-color: #fff;
+	z-index: 300;
+}
+.m_mainimg
+{
+	background-image: url('../img/main.jpg');
+	background-size: cover;
+	background-repeat: no-repeat;
+	position: absolute;
+	top:0; left: 300px;
+	width: 100%;
+	height: 900px;
+}
+.m_exp /*메인 불투명박스*/
+{	
+	clear: both;
+	display: block;
+	width: 750px;
+	height: 260px;
+	background-color: rgba(2, 28, 46, 0.8);
+	position: absolute;
+	top:270px;
+	left:170px;
+	z-index: 400;
+}
+.exp_title h1 /* DESIGN THE FUTURE */
+{
+	margin-top: 15px;
+	margin-left: 35px;
+	font-size: 2.7rem;
+	text-shadow: 4px 8px 2px black;
+	letter-spacing: 0px;
+}
+.m_line /* 메인슬로건 옆에 선 ㅡ */
+{
+	position: absolute;
+	top:325px; left: 660px;
+	width: 290px;
+	height: 2px;
+	background-color: white;
+	z-index: 500;
+}
+.exp_title span /* 모바일 버전, 슬로건 밑에 선 _ */
+{
+	display:none;
+}
+.exp_cont /* 메인 콘텐츠 전체 글상자 */
+{
+	margin-left: 35px;
+}
+.exp_cont h3 /* Companies Creating New Things …*/
+{
+	margin-top: -13px;
+	margin-bottom: 27px;
+	font-size: 1.2rem;
+	text-shadow: 2px 1px 1px black;
+}
+.exp_cont p /* 고객을 위한 가치창조라는 목표 .. */
+{
+	width: 590px;
+	display: block;
+	line-height: 1.9;
+	font-size: 0.9rem;
+}

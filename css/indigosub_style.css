@@ -1,0 +1,414 @@
+@import url('https://fonts.googleapis.com/css?family=Literata&display=swap');
+
+*
+{
+	margin: 0;
+	padding: 0;
+}
+header h3 /*INDIGO*/
+{
+	font-size: 1.6rem;
+	font-weight: lighter;
+	float: left; /*textalign넣으면 햄버거랑 동등한 위치로 안 감*/
+	margin:20px 25px;
+}
+h4 /*아이콘 밑에 제목*/
+{
+	font-size: 1.2rem;
+	font-weight: lighter;
+	text-align: center;
+	color:#3f51b5;
+}
+header
+{
+	width: 100%;
+	height: 63px;
+	background-color: white;
+	box-sizing: border-box;
+}
+header a
+{
+	color:#3f51b5;
+}
+#menu /*햄버거버튼*/
+{
+	margin: 20px 25px;
+	display:block;
+	float: right;
+	width: 20px;
+	height: 15px;
+}
+#menu span /*햄버거 버튼 줄*/
+{
+	display: block;
+	background-color:#3f51b5;
+	width: 100%;
+	height: 2px;
+	margin-top: 5px;
+}
+#m_menubar
+{
+	display: none;
+	position: absolute;
+	top: 63px; left: 0;
+	width: 100%;
+	height: auto;
+	background-color: #3f51b5;
+	z-index: 50;
+}
+#m_menubar #m_menubarli li
+{	
+	border-bottom: 1px solid #2c3982;
+	padding: 15px 0 15px 25px;
+	text-align: left;
+	font-size: 0.9rem;
+}
+#m_menubar #m_menubarli li a
+{
+	color: white;
+}
+
+#main-img img
+{
+	width: 100%;
+	height: 120%;
+}
+.main-txt /*WEARE/WORK/BLOG*/
+{
+	font-size: 2.8rem;
+	text-align: center;
+	font-weight: lighter;
+	margin-top: 60px;
+	margin-bottom: 40px;
+	color:#3f51b5;
+}
+.cont-txt p
+{
+	font-family: 'Literata', serif;
+	font-size: 1rem;
+	text-align: center;
+	line-height: 2;
+	padding: 0 40px 50px 40px;
+	color:#424242;
+}
+.cont-picto img
+{
+	width: 12%;
+	height: 12%;
+	margin-bottom: 30px;
+}
+.cont-picto
+{
+	text-align: center;
+}
+.cont-picto p
+{
+	font-family: 'Literata', serif;
+	text-align: center;
+	font-size: 0.9rem;
+	line-height: 1.6;
+	padding: 20px 30px;
+	margin-bottom: 40px;
+	color:#424242;
+}
+hr
+{
+	margin: 20px auto;
+	width: 90%;
+	height: 2px;
+	background-color:#eee;
+}
+#work_img hr
+{
+	margin: 80px auto 40px auto;
+	width: 5%;
+	height: 2px;
+	background-color: #3f51b5;
+}
+.big_img li img
+{
+	width: 100%;
+}
+#work_img .big_img li a
+{
+	position: relative;
+	display: block;
+	width: 100%;
+	height: 100%;
+}
+#work_img .big_img li a:after
+{	
+	display: block;
+	content: "";
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top:0; left: 0;
+	background-color:#3f51b5;
+	z-index: 10;
+	opacity: 0;
+	transition: all 0.3s
+}
+#work_img .big_img li a:hover:after
+{
+	opacity: 0.8;
+}
+.big_img .info
+{
+	position: absolute;
+	top: 5%; left: 5%;
+	z-index: 20;
+	color: white;
+	opacity: 0;
+}
+.big_img .info h3
+{
+	font-size: 1.4rem;
+	font-weight: lighter;
+}
+.big_img .info span
+{
+	display: block;
+	margin-top: 12px;
+	font-size: 0.8rem;
+}
+#work_img li a:hover .info
+{
+	opacity: 1;
+}
+.middle_img
+{
+	text-align: center;
+}
+.middle_img img
+{
+	width: 90%;
+	height: auto;
+	margin-top: 30px;
+}
+.middle_img .blog_txt 
+{
+	display: block;
+	text-align: left;
+	margin-left: 5%;
+}
+.middle_img .date
+{
+	color: gray;
+	font-size: 0.6rem;
+	margin-top: 10px;
+}
+.middle_img .blog_txt p:nth-child(2)
+{
+	margin: 15px 0;
+	color:#3f51b5;
+}
+.middle_img a
+{
+	color:#424242;
+}
+#contact
+{
+	margin:0px 5%;
+}
+#contact input
+{
+	margin-bottom: 30px;
+	padding-bottom: 10px; 
+}
+#contact #btn
+{
+	margin-top: 30px;
+	margin-bottom: 100px;
+	background-color: #3f51b5;
+	color: white;
+	width: 120px;
+	height: 35px;
+	float: right;
+	vertical-align: center;
+	padding: 5px;
+	cursor:pointer;
+}
+footer
+{
+	clear: both;
+	width: 100%;
+	height: 40px;
+	background-color: white;		
+}
+footer h4
+{
+	font-size: 1rem;
+	line-height: 60px;
+	color:#3f51b5;
+}	
+
+
+@media screen and (min-width:768px){
+
+header
+{
+	height: 82px;
+	position: relative;
+	width: 100%;
+}
+header h3
+{
+	margin:28px 0 25px 53px;
+}
+#menu
+{display: none;}
+#m_menubar
+{
+	display: inline-block;
+	background-color: white;
+}
+#m_menubar #m_menubarli
+{	
+	width: 470px;
+	position: absolute;
+	top:-45px; right: 20px;
+}
+#m_menubar #m_menubarli li
+{
+	display: inline-block;
+	border:none;
+}
+#m_menubar #m_menubarli li a
+{
+	color: #3f51b5;
+}
+#we-wrap
+{
+	width: 90%;
+	margin: 0 auto;
+}
+.cont-txt, .cont-picto
+{
+	margin: 0 auto;
+}
+.cont-txt
+{
+	padding: 0px 0 70px 0;
+	margin-top: -15px;
+}
+.cont-txt p
+{
+	padding: 0;
+	width: 70%;
+	margin: 0 auto;
+}
+.cont-picto
+{
+	float: left;
+	display: inline-block;
+	width: 25%;
+	padding: 30px 0px;
+	margin-bottom: 20px;
+}
+.cont-picto .picto
+{
+	width: 23%; height: 20%;
+}
+.cont-picto p
+{
+	padding: 20px 20px;
+	font-size: 0.8rem;
+}
+.main-txt
+{
+	margin-top: 120px;
+}
+.big_img
+{
+	padding-top: 20px;
+}
+.big_img li
+{
+	width: 50%;
+	float: left;
+}
+.big_img li:nth-last-child(1)
+{
+	margin-bottom: 150px;
+}
+#work_img hr
+{
+	width: 30px;
+	margin: 0px auto 150px auto;
+}
+#blog_img 
+{
+	clear: both;
+}
+#blog-cont-wrap
+{
+	width: 90%;
+	margin: 0 auto;
+}
+#blog_img .middle_img
+{	
+	float: left;
+	width: 33.33%;
+	margin-bottom: 150px;
+}
+.middle_img .blog_txt p
+{
+	width: 80%;
+	line-height: 1.5;
+}
+.middle_img .blog_txt p:nth-child(2)
+{
+	margin: 15px 0;
+	color:#3f51b5;
+}
+#contact
+{
+	margin: 0 auto;	
+}
+#contact-cont
+{	
+	width: 90%;
+	margin: 0 auto;
+	padding-top: 50px;
+}
+#contact #contact-cont div
+{
+	float: left;
+	width: 50%;
+}
+#contact input
+{
+	width: 95%;
+	margin-bottom: 36px;
+}
+#contact #inputwrap, #contact #txtarea
+{
+	display: inline-block;
+}
+
+#map
+{clear: both;}
+#map iframe
+{height: 450px;}
+
+
+
+}
+
+@media screen and (min-width:1024px){
+
+.big_img li
+{
+	width: 25%;
+	float: left;
+}
+#weare-wrap, #blog_img, #contact
+{
+	clear: both;
+	width: 70%;
+	margin: 0 auto;
+}
+
+
+}

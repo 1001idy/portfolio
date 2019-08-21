@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Pagpan</title>
+	<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<link rel="stylesheet" type="text/css" href="css/pagpan_style.css">
+<link href="css/basic-jquery-slider.css" rel="stylesheet" type="text/css" media="screen">
+
+</head>
+
+<body>
+	<div id="wrap">
+	<header>
+		<div id="logo">
+			<a href="#"><img src="img/logo-pag.png"></a>
+		</div>
+		<nav class="gnb">
+			
+				<ul class="gnb_list">
+					<li><a href="#">HOME</a></li>
+					<li><a href="#">ABOUT US</a>
+						<ul class="gnb_listsub">
+							<li><a href="#">Welcome</a></li>
+							<li><a href="#">History</a></li>
+							<li><a href="#" class="list_r">Notice</a></li>
+						</ul>
+					</li>
+					<li><a href="#">MENU</a>
+						<ul class="gnb_listsub">
+							<li><a href="#">Korean food</a></li>
+							<li><a href="#">Western food</a></li>
+							<li><a href="#">Japanese food</a></li>
+							<li><a href="#" class="list_r">Chinese food</a></li>
+						</ul>
+					</li>
+					<li><a href="#">WHERE WE ARE</a>
+						<ul class="gnb_listsub">
+							<li><a href="#">Google map</a></li>
+							<li><a href="#" class="list_r">Nearest Subway Station</a></li>
+						</ul>
+					</li>
+					<li><a href="#">TODAY'S RECIPES</a></li>
+					<li><a href="#">BLOG</a></li>
+				</ul>
+			
+		</nav>
+	</header>
+
+	<section>
+
+		<div id="slide-img">
+			<ul class="bjqs">
+				<li><img src="img/slide1-pag.jpg"></li>
+				<li><img src="img/slide2-pag.jpg"></li>
+				<li><img src="img/slide3-pag.jpg"></li>
+			</ul>
+		</div>
+		<div class="main-txt">
+			<div class="txt-2row">
+				<h1>Welcome to pagpan Restaurant & Lounge Bar</h1>
+				<p>Chic and contemporary with a modern British menu, Twelve Restaurant & Lounge Bar is located on the Lancashire coast at Marsh Mill Village in Thornton Cleveleys.</p>
+			</div>
+			<div class="txt-3col">
+				<h4>Find pagpan near you!</h4>
+				<img src="img/map-pag.gif">
+				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce lobortis nunc eget elit porta tristique. Proin suscipit ornare lectus, nec consectetur orci bibendum eget.</p>
+			</div>
+			<div class="txt-3col">
+				<h4>Celebrate your special day!</h4>
+				<img src="img/cheer.gif">
+				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce lobortis nunc eget elit porta tristique. Proin suscipit ornare lectus, nec consectetur orci bibendum eget.</p>
+			</div>
+			<div class="txt-3col">
+				<h4>Special benefit with credit cards!</h4>
+				<img src="img/card-pag.gif">
+				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce lobortis nunc eget elit porta tristique. Proin suscipit ornare lectus, nec consectetur orci bibendum eget.</p>
+			</div>
+		</div>
+	</section>
+
+	<footer>
+		<div id="ft-wrap">
+			<div class="ft-txt">
+				<p>P.O. Box 4483 | Califonia USA | Tel: +1 2 333 3789 | Fax: +1 2 333 4789 | E-mail: webmaster@pagpanrestaurant.com
+				<br>Copyright 2011 pagpan Restaurant & Bar All Rights Reserved</p>
+			</div>
+			<div class="sns-img">
+				<span><img src="img/rss-pag.gif"></span>
+				<span><img src="img/twitter-pag.gif"></span>
+				<span><img src="img/facebook-pag.gif"></span>
+			</div>
+		</div>
+	</footer>	
+
+	</div> <!-- wrap -->
+<script src="js/jquery-3.4.1.min.js"></script>
+<script src="js/jquery-migrate-1.4.1.min.js"></script>
+<script type="text/javascript" src="js/basic-jquery-slider.js"></script>
+<script type="text/javascript">
+//basic-jquery-slider 사용
+	
+	$(function()
+	{
+		$('#slide-img').bjqs({        
+			'width' : 900,        
+			'height' : 510,        
+			'showMarkers' : true,        
+			'showControls' : false,        
+			'centerMarkers' : false   
+		});
+
+		/*$('.gnb_list li').hover(function()
+		{	
+			$('.gnb_listsub').slideUp(400);
+			$(this).find('.gnb_listsub').slideDown(400);
+		},function()
+		{
+			$('.gnb_listsub').slideUp(400);
+			$(this).find('.gnb_listsub').slideUp(500);
+		}); // .gnb_listsub > li 갖다댔을 때 한번 닫혔다 열리는 문제..... */
+
+		/* Dropdown script */
+		var timeout    = 500;
+		var closetimer = 0;
+		var ddmenuitem = 0;
+		
+		function dropdown_open()
+		{  dropdown_canceltimer();
+		   dropdown_close();
+		   ddmenuitem = $(this).find('ul').css('visibility', 'visible');}
+		
+		function dropdown_close()
+		{  if(ddmenuitem) ddmenuitem.css('visibility', 'hidden');}
+		
+		function dropdown_timer()
+		{  closetimer = window.setTimeout(dropdown_close, timeout);}
+		
+		function dropdown_canceltimer()
+		{  if(closetimer)
+		   {  window.clearTimeout(closetimer);
+			  closetimer = null;}}
+		
+		$(document).ready(function()
+		{  $('.gnb_list > li').bind('mouseover', dropdown_open)
+		   $('.gnb_list > li').bind('mouseout',  dropdown_timer)});
+		
+		document.onclick = dropdown_close;
+	});
+
+</script>
+
+<!-- <script type="text/javascript">
+//첫 줄에는 모든 슬라이드를 숨기는 코드를 작성해야함
+	$(function() 
+	{ 
+ 		$('.slide:gt(0)').hide(); //"gt"는 "greater than"뜻으로 지정된 인덱스부터 모든 요소를 ​​선택
+ 		setInterval(function()  //setInterval 이미지 사이의 순환을 자동화
+ 		{
+   		$('.slide:first').fadeOut('slow').next().fadeIn('slow').end().appendTo('.slider');
+ 		}, 2500) //end는 순환을 멈추고 첫 슬라이드로 돌아가고 
+	}); //appendTo는 이 슬라이드를 우리의 목록 ("silder")에 추가하여 첫 번째 슬라이드부터 다시 시작
+//슬라이드 네비
+	/*$(document).ready(function() 
+	{
+	  	var slider = $(".main-img");
+	  	var slider_nav = $("#slides-nav");
+	  	slider_nav.find("a[href=#slide1]").addClass("active");
+	  	slider_nav.localScroll({
+	    target:'.main-img',
+	    axis: 'x'
+	});
+	 	slider_nav.find("a").click(function()
+	 {
+	    slider_nav.find("a").removeClass("active");
+	    $(this).addClass("active");
+	  });
+	});*/
+</script> -->
+</body>
+</html>

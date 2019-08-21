@@ -1,0 +1,37 @@
+@charset "utf-8";
+/* CSS Document */
+@import url('https://fonts.googleapis.com/css?family=Allerta&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Viga&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Crimson+Text&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Overpass&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Noto+Sans+KR&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Open+Sans&display=swap');
+
+*{ /*전체선택자*/ margin:0; padding:0;border: 0;}
+body{ 
+	font-family: 'Noto Sans KR', sans-serif, "맑은 고딕", "돋움", "굴림";
+}
+ul, ol, li{ list-style:none;}
+img{ vertical-align:top;}
+a, a:hover, a:visited{ text-decoration:none;}
+address{ font-style:normal;}
+
+.m_exp h1, .f_location h1, .f_customer_sub h1{
+	font-size: 2.7rem;
+	font-family: 'Overpass', sans-serif;
+}
+.c_title h1{
+	font-size: 2rem;
+	font-family: 'Viga', sans-serif;
+	/*letter-spacing: 3px;*/
+}
+
+h3{
+	font-size: 1.5rem;
+	font-weight: bold;
+	font-family: 'Allerta', sans-serif;
+}
+
+p{
+	font-size: 0.8rem;
+}

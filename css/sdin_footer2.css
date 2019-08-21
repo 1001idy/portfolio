@@ -1,0 +1,429 @@
+	*{
+		margin: 0;
+		padding: 0;
+	}
+
+	.f_1{
+		display: none;
+	}
+	.f_map{
+		margin: 0;
+		width: 100%;
+		height: 657px;
+		display: inline-block;	
+		/*display: none;	*/
+		margin-top: 100px;
+		color: #fff;
+		margin-bottom: 70px;		
+		position: relative;
+	}
+	.f_map_sub{
+		margin: 0;
+		width: 100%;
+		height: 100%;
+		position: absolute;		
+		top:0;
+	}	
+	.f_m_location{
+		display: inline-block;
+		width: 100%;
+		height: 100%;
+		/*background-color: #000;*/
+		color: #000;
+		z-index: 200;	
+	}
+	.f_m_location h1{
+		font-size: 2.7rem;
+    	font-family: 'Overpass', sans-serif;
+    	margin-left: 10px;
+	}
+
+	.f_m_location p{
+		font-size: 13px;
+		margin-left: 10px;
+	}
+	.f_m_location p:nth-child(3){
+		margin-bottom: 100px;
+	}
+
+	.f_m_location img{
+		max-width: 100%;
+		height: auto;
+		margin-bottom: 50px;
+	}
+
+	.f_m_location hr{
+		width: 90%;
+		height: 2px;
+		background-color: black;
+		margin-top: 5px;
+		color: black;
+		margin-left: 5px;
+		margin-bottom: 100px;
+	}
+
+
+	.f_customer_sub h1,h5 {
+		margin-left: 10px;
+	}
+	.f_locaion_map{
+		position: absolute;		
+		bottom: 100px;
+		display: block;
+		width: 100%;
+		height:auto;
+		z-index: 300;
+	}
+	.f_locaion_map img{
+		max-width: 100%;
+		height: auto;
+	}
+
+	.f_customer{
+		width:100%;
+		height: 100%;	
+		position: relative;
+		display: inline-block;
+		margin-top: 100px;
+		/*display: none;*/
+	}
+	.f_customer_sub{		
+		clear:both;
+		display: inline-block;
+		box-sizing: border-box;
+		width: 100%;
+		height: auto;
+		padding: 0 10px;
+		/*padding-right: 6%;	*/
+		/*position: absolute;*/
+		/*right: 0px;
+		top: 0px;*/
+		/*border: 1px solid red;*/
+	}	
+	.f_fieldset{
+		width: 100%;
+		/*height: 230px;*/
+		height: auto;
+		margin-top: 30px;
+	}	
+	.f_info{
+		display:inline-block;
+		width:100%;
+	}
+	.f_info select{
+		margin:0;		
+		width: 100%;
+		font-size:12px;
+		padding-left:-10px;
+		padding-top:10px;
+		padding-bottom: 10px;
+		margin-top: 3px;
+		box-sizing:border-box;
+		color:gray;
+		font-family:'Montserrat';
+		border: 1px solid gray;
+	}
+	.f_content{
+		display:inline-block;
+		/*position: absolute;*/
+		width:100%;	
+	}	
+	
+	input, textarea{
+		width:100%;
+		margin-top:3px;		
+		padding-top:15px;
+		padding-bottom: 15px;
+		padding-left: 10px;
+		border:1px solid #757575;		
+		/*border-bottom:1px solid #757575;*/
+		color:#3f51b5;
+		font-family:'Montserrat';
+		font-size:12px;
+		vertical-align:top;
+		border-radius:0;
+		box-sizing:border-box;
+		appearance:none;
+	}
+	
+	.f_content textarea{
+		height:170px;
+		}
+	.f_send{
+		/*position: relative;*/
+		display: inline-block;
+		clear: both;
+		width: 100%;
+		height: 60px;
+		margin-top: 10px;
+		/*margin-bottom: 75px;*/
+		background-color: #01415a;
+		color: #fff;	
+		font-size: 12px;	
+	}
+	.f_send_ch{
+		width: 15px;
+		height: 15px;
+		margin-top:23px;
+		margin-left: 5px;
+		margin-right: 5px;
+		/*margin: 25px 10px 20px 15px;*/			
+		float: left;
+	}
+	.f_send_p{
+		display: inline-block;
+		float: left;
+
+		margin-top: 20px;
+	}
+	.f_send_enter{
+		display: inline-block;
+		margin-top: 20px;	
+		color: #fff;
+		float: right;		
+	}	
+
+	.f_send_enter a{
+		/*display: inline-block;*/
+		color: #fff;
+		text-decoration: none;
+		/*float: right;*/				
+	}
+	.f_send_enter_icon{
+		width: 30px;
+		height: 30px;
+		background-color: white;
+		display: inline-block;
+		float: right;
+		background-image: url("../img/confirm.png");		
+		background-repeat: no-repeat;
+		background-size: cover;
+
+		background-color: #01415a;
+		margin-right: 5px;
+		margin-top: -5px;
+	}	
+	.f_footer{
+		clear: both;
+		display: inline-block;
+		/*position: absolute;*/
+		margin-top: 30px;
+		text-align: center;
+		width: 100%;
+		/*height: 180px;	*/	
+		background-color: #01415a;
+		color: #fff;
+		/*bottom: 0;
+		left: 0;*/
+		/*display: none;*/
+		box-sizing: border-box;
+		padding: 10px;
+	}
+	.f_footer_sub{
+		display: block;
+		/*border:1px solid red;*/
+		margin:0 auto;
+		margin-top: 15px;
+	}
+	.f_add{
+		display: block;		
+		width: 100%;		
+		/*margin-left: 70px;*/
+		/*background-color: blue;*/
+		text-align: left;
+		box-sizing: border-box;
+		font-size: 11px;
+		padding-bottom: 10px;
+
+	}
+	.f_add select{
+		background-color: #01415a;
+		color: white;
+		border:1px solid white;
+		padding:5px 30px 5px 0px;
+	}
+	.f_service{
+		display: block;		
+		width: 100%;
+		text-align: left;
+		box-sizing: border-box;
+		font-size: 11px;
+	}
+	/*.f_fieldset::after, .container::after{
+		display:block;
+		content:"";
+		clear:both;/*float 해제, block 속성일때 해제해야 다른 css적용이 가능하다*/
+	/*}*/
+
+@media screen and (min-width:1000px) {
+	.f_map_sub{
+		margin: 0;
+		/*width: 80%;*/
+		height: 100%;
+		position: absolute;
+		right: 0;
+		top:0;
+	}
+
+	.f_m_location{
+		display: none;
+	}
+	.f_1{
+		width: 90%;
+		height: auto;	
+		display: inline-block;
+		position: absolute;
+		top: 40px;
+		right: -45px;
+	}
+
+	.f_2{
+		width: 50%;
+		height: 100%;	
+		display: inline-block;
+		background-image: url(../img/company.png);
+		background-repeat: no-repeat;
+		/*background-size: contain;*/
+		z-index:100;
+		position: absolute;
+		top: 150px;
+		right: 70px;
+	}
+	
+	.f_location{
+		display: inline-block;
+		position: absolute;
+		width:500px;
+		height:235px;	
+		top: 300px;
+		margin-left: -50px;
+		padding-left: 30px;
+		padding-top: 0px;
+		padding-bottom: 10px;
+		padding-right: 80px;		
+		background-color: rgba(0,0,0,0.8);
+		color:white;
+		z-index: 200;		
+	}	
+	.f_location p{
+		font-size: 14px;
+		color: white;
+	}
+	
+	.f_locaion_map{	
+		position: absolute;		
+		bottom: 20px;
+		right: 400px;
+		width: 495px;
+		height:300px;
+		margin-right: 5px;		
+		margin-left: 400px;
+		background-image: url(../img/map.png);
+		background-position: center;
+		background-repeat: no-repeat;
+		background-size: cover;
+		z-index: 300;
+		box-shadow: 0px 5px 5px gray;		
+	}
+	.f_locaion_map img{
+		max-width: 100%;
+		height: auto;
+	}
+	.f_icon_add{	
+		display: inline-block;
+		/*position: absolute;	*/
+		left: 20px;
+		bottom: 400px;				
+		left: 30px;
+		bottom: 30px;	
+		color: black;
+		font-size: 14px;
+	}	
+	.f_icon_add hr{
+		width: 60%;
+		margin-left: 0px;
+	}
+	.f_customer_sub{
+		width:80%;
+		float: right;
+		/*margin-top: 70px;*/
+		margin-top: 8%;
+		padding-right: 6%;	
+		padding-bottom: 10px;
+	}
+	.f_customer_sub h1,h5 {
+		margin-left: 0px;
+	}
+	.f_info{
+		display:inline-block;
+
+		float:left;
+		width:30%;		  
+	}
+	.f_info select{
+		margin-left: 0px;
+		padding-left: 10px;		
+	}
+	.f_content{
+
+		display:inline-block;
+		/*position: absolute;
+		right: 10px;
+		bottom: 0px;*/
+		float:right;
+		width:65%;				
+	}
+	input, textarea{
+		
+		border:1px solid #757575;
+		/*margin:5px;	*/	
+		padding-top:10px;
+		padding-bottom: 10px;
+		padding-left: 10px;
+		margin-bottom: 5px;
+	}
+	
+	.f_footer{
+		clear: both;
+		position: absolute;
+		margin-top: 20px;
+		text-align: center;
+		width: 100%;
+		/*height: 130px;		*/
+		height: 20%;
+		background-color: #01415a;
+		color: #fff;
+		bottom: 10px;
+		left: 0px;
+		padding:10px;
+		line-height: 1.2em;
+		box-sizing: border-box;
+
+	}
+	.f_add{
+		display: inline-block;
+		float: left;
+		width: 47%;		
+		padding-bottom: 0;
+		/*margin-left: 70px;*/
+		/*background-color: blue;*/
+		text-align: left;
+		box-sizing: border-box;
+		font-size: 14px;
+		/*padding-top:15px;*/
+		padding-left: 250px;
+
+	}
+	.f_add select{
+		margin-top: 5px;
+	}
+	.f_service{
+		display: inline-block;
+		float: right;
+		width: 47%;
+		text-align: left;
+		box-sizing: border-box;
+		font-size: 14px;
+		/*padding-top:15px;*/
+		padding-left: 50px
+	}

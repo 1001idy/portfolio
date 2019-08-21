@@ -1,0 +1,175 @@
+*
+{
+	padding: 0; margin: 0;
+}
+a
+{
+	text-decoration: none;
+}
+ul, li
+{
+	list-style:none;
+}
+
+#wrap
+{
+	margin: 0 auto;	
+	width: 900px; height: auto;
+	box-sizing: border-box;
+	border: 1px solid #eee;
+}
+#logo
+{
+	width: 900px; height: 108px;
+	background-image: url(../img/back_img1.jpg);
+	background-repeat: no-repeat;
+	background-position: right;
+}
+#logo img
+{
+	padding: 25px;
+}
+.gnb
+{
+	width: 	900px; height: 50px;
+	background-color: dodgerblue;
+	box-shadow: 0px 7px 10px 0px darkslateblue inset;
+	padding-left: 15px;
+	box-sizing: border-box;
+	z-index: 10;
+}
+.gnb_list > li
+{
+	display: inline-block;
+	margin-top: 15px;
+}
+.gnb_list > li > a
+{
+	color: white;	
+	padding: 0 15px;
+	background-image: url(../img/menu_line.png);
+	background-repeat: no-repeat;
+	background-position: right center;
+}
+.gnb_list > li a:hover
+{
+	color:#FFCC00;
+	text-shadow: 2px 2px 3px #000;
+}
+.gnb_list > li ul
+{
+	visibility: hidden; 
+	position: absolute;
+	min-width: 110px;
+	margin-top: 14px;
+	z-index: 100;
+}
+.gnb_list > li ul li
+{	
+	background-color: dodgerblue;
+	padding: 10px 0;
+}
+.gnb_list > li ul li:nth-last-child(1)
+{
+	border-bottom-left-radius: 10px;
+	border-bottom-right-radius: 10px;
+}
+.gnb_list > li ul li:hover
+{
+	background-color: lightblue;
+}
+.gnb_list > li ul li a
+{
+	color: white;
+	padding: 12px;
+}
+
+
+/*basic-jquery-slider 사용*/
+.bjqs
+{
+	padding: 0;
+	margin: 0;
+	width: 900px;	
+}
+#slide-img
+{
+	/*display: none;*/
+	z-index: 1;
+}
+.main-txt
+{
+	padding: 10px;
+}
+.txt-2row h1 /*Welcome to*/
+{
+	color: lightskyblue;
+	font-family: 'Adobe Arabic';
+	font-size: 3.5rem;
+	font-weight: lighter;
+}
+.txt-2row p
+{
+	font-size: 1.2rem;
+	font-weight: lighter;
+	margin-bottom: 20px;
+}
+
+.txt-3col
+{
+	display: inline-block;
+	width: 260px;
+	float: left;
+	padding: 10px;
+}
+.main-txt div:nth-child(2), .main-txt div:nth-child(3)
+{
+	border-right: 1px solid lightgray;
+}
+.main-txt div:nth-child(3), .main-txt div:nth-child(4)
+{
+	padding-left: 20px;
+}
+.txt-3col h4
+{
+	font-weight: lighter;
+	color:dodgerblue;
+	padding-bottom: 10px;
+}
+.txt-3col img
+{
+	display: inline-block;
+	width: 80px;
+	height: 80px;
+	float: left;
+}
+.txt-3col p
+{
+	display: inline-block;
+	font-size:  0.8rem;
+	float: right;
+	width: 170px;
+}
+
+#ft-wrap
+{
+	padding-top: 50px;
+	clear: both;
+	margin-bottom: 10px;
+}
+.ft-txt
+{
+	display: inline-block;
+	text-align: left;
+	font-size: 0.7rem;
+	padding-left:  20px;
+}
+.sns-img
+{
+	float: right;
+	display: inline-block;
+}
+.sns-img span
+{
+	margin-right: 20px;
+}

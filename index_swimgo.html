@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>SWIMGo</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<link rel="stylesheet" type="text/css" href="css/jquery.mobile-1.4.5.min.css">
+	<link rel="stylesheet" type="text/css" href="css/swimgo_style.css">
+	<script src="js/jquery-1.11.1.min.js"></script>
+	<script src="js/jquery.mobile-1.4.5.min.js"></script>
+	<script src="js/ajax-xml.js"></script>
+	<script src="js/dbpool.js"></script>
+	<script>
+	
+		$(function(){
+			openDB();
+			createTable();	
+		
+			$('#w_submit').click(function()
+			{
+				var type=$('#community').val();
+				if(type=='미정')
+				{
+					alert('분류를 선택해주세요.')
+				}
+				else
+				{
+				insertbull();
+				}	
+			});
+
+			$('#w_cancel').click(function()
+			{
+				$('#community').val('미정').attr('selected', 'selected');
+				$('#community').selectmenu('refresh');
+			});
+
+			
+			selectcommunity('후기');
+			
+			selectcommunity('벼룩');
+			
+			selectcommunity('자유');
+		
+			selectcommunity('지역');
+			
+			
+
+			
+		});
+
+	</script>
+
+</head>
+<body>
+	<div data-role="page" id="page1">
+		<div data-role="header" id="main_header">
+			<h1 id="maintitle">SWIMGo</h1>
+			<div data-role="navbar" id="main_nav">
+				<ul>
+					<li><a href="#page2">수영 영법</a></li>
+					<li><a href="#page3">수영 장비</a></li>
+					<li><a href="#page4">수영장</a></li>
+					<li><a href="#page5">커뮤니티</a></li>
+				</ul>
+			</div>
+		</div> <!-- header -->
+		<div data-role="content" id="main_cont">
+			<img src="img/start.gif" id="mainimg">
+		</div> <!-- content -->
+		<div data-role="footer" data-positon="fixed" id="main_ft">
+			<h5 class="ft_txt">♡Happy Swim♡</h5>
+		</div> <!-- footer -->
+	</div> <!--  page1 Main -->
+
+	<div data-role="page" id="page2">
+		<div data-role="header" data-add-back-btn="true" id="head1">
+			<a href="#page1" data-icon="carat-l" class="ui-btn-left">Home</a>
+			<h1>수영 영법</h1>
+			<a href="#page3" data-icon="carat-r" class="ui-btn-right">Next</a>
+			<div data-role="navbar" id="nav1">
+				<ul>
+					<li><a href="#page2">수영 영법</a></li>
+					<li><a href="#page3">수영 장비</a></li>
+					<li><a href="#page4">수영장</a></li>
+					<li><a href="#page5">커뮤니티</a></li>
+				</ul>
+			</div>	
+		</div> <!-- header -->
+		<div data-role="content" id="swimtype">
+			<h3 style="text-align: center; color:#6EB0CC;">··· 수영 영법 종류와 이해 ···</h3><br>
+			<ul data-role="listview">
+				<li><a href="#page6"><img src="img/freestyle.gif">자유형(Freestyle)</a></li>
+				<li><a href="#page7"><img src="img/backstroke.gif">배영(Backstroke)</a></li>
+				<li><a href="#page8"><img src="img/breaststroke.gif">평영(Breaststroke)</a></li>
+				<li><a href="#page9"><img src="img/butterfly.gif">접영(Butterfly)</a></li>
+			</ul>		
+		</div> <!-- content -->
+		<div data-role="footer" data-positon="fixed" id="ft1">
+			<h5 class="ft_txt">♡Happy Swim♡</h5>
+		</div> <!-- footer -->
+	</div> <!--  page2 수영영법 -->
+
+	<div data-role="page" id="page3">
+		<div data-role="header" data-add-back-btn="true" id="head2">
+			<a href="#page1" data-icon="carat-l" class="ui-btn-left">Home</a>
+			<h1>수영 장비</h1>
+			<a href="#page4" data-icon="carat-r" class="ui-btn-right">Next</a>
+			<div data-role="navbar" id="nav2">
+				<ul>
+					<li><a href="#page2">수영 영법</a></li>
+					<li><a href="#page3">수영 장비</a></li>
+					<li><a href="#page4">수영장</a></li>
+					<li><a href="#page5">커뮤니티</a></li>
+				</ul>
+			</div>	
+		</div> <!-- header -->
+		<div data-role="content" id="equip">
+		
+				<div data-role="collapsible" data-icon="heart" id="equip_list1">
+					<h3>수모</h3>
+					<div data-role="collapsible">
+						<h3 class="equip_sub">실리콘 수모</h3>
+						<img src="img/silcap.jpg">
+						<p>소재가 실리콘 100%로 되어있어 탄력이 강하고 밀착력이 우수함<br> 수면 저항을 최소화 하고 물이 잘 들어오지 않아 머릿결이 상하는 것을 방지해주는 장점이 있으나 압박감이 심한 단점이 있음</p><br>
+					</div>
+					<div data-role="collapsible">
+						<h3 class="equip_sub">메쉬 수모</h3>
+						<img src="img/meshcap.jpg">
+						<p>망사 소재로 되어있어 열 방출이 빠른 장점이 있으나 물이 잘 통하는 만큼 머릿결 손상의 단점이 있음</p><br>
+					</div>
+					<div data-role="collapsible">
+						<h3 class="equip_sub">천(스판) 수모</h3>
+						<img src="img/spancap.jpg">
+						<p>보통 폴리에스터 80% + 폴리우레탄 20%의 소재로 편안한 착용감이 장점이나 실리콘 수모보다 수명이 짧고 머릿결 손상도가 높아짐</p><br>
+					</div>
+					<div data-role="collapsible">
+						<h3 class="equip_sub">코팅 수모</h3>
+						<img src="img/cotcap.jpg">
+						<p>스판 수모 겉면에 실리콘을 코팅하여 실리콘 수모와 천(스판) 수모의 단점을 보완한 수모</p><br>
+					</div>
+				</div>
+				<div data-role="collapsible" id="equip_list2">
+					<h3>수경</h3>
+					<div data-role="collapsible">
+						<h3 class="equip_sub">패킹 수경</h3>
+						<img src="img/packglass.jpg">
+						<p>실리콘 패킹이 있어서 편안한 착용감을 주고 실리콘 압력에 물이 상대적으로 적게 들어옴<br>
+						눈에 자국이 많이 남는 단점이 있음 
+						</p><br>
+					</div>
+					<div data-role="collapsible">
+						<h3 class="equip_sub">노패킹 수경</h3>
+						<img src="img/nopackglass.jpg">
+						<p>실리콘 패킹이 없어서 시야가 넓고 저항이 적음<br>
+						얼굴형에 맞는 코걸이 선택에 따라 착용감 격차가 큼
+						외부 충격의 위험이 있음</p><br>
+					</div>
+					<div data-role="collapsible">
+						<h3 class="equip_sub">오픈 워터 수경</h3>
+						<img src="img/openwglass.jpg">
+						<p>실내 수영보다는 야외 수영에 적합한 수경으로 수경 알이 크고 패킹이 두꺼움<br>
+						시야 확보와 내구성이 좋음</p><br>
+					</div>
+				</div>
+				<div data-role="collapsible" id="equip_list3">
+					<h3>수영복</h3>
+					<div data-role="collapsible">
+						<h3 class="equip_sub">여자 수영복</h3>
+						<img src="img/length.PNG">
+					</div>
+					<div data-role="collapsible">
+						<h3 class="equip_sub">남자 수영복</h3>
+						<img src="img/length2.PNG">
+					</div>
+				</div>
+				<div data-role="collapsible" id="equip_list4">
+					<h3>기타</h3>
+					<div data-role="collapsible">
+						<h3 class="equip_sub">킥판</h3>
+						<img src="img/kick.jpg">
+						<p>부력을 가진 판 모양의 수영 용품으로 물에 뜰 수 있도록 도와줌</p><br>
+					</div>
+					<div data-role="collapsible">
+						<h3 class="equip_sub">헬퍼</h3>
+						<img src="img/helper.jpg">
+						<p>킥판에 벨트가 추가되어 버클을 이용해 허리에 장착하는 형태</p><br>
+					</div>
+					<div data-role="collapsible">
+						<h3 class="equip_sub">풀부이</h3>
+						<img src="img/fullbui.jpg">
+						<p>킥판과 헬퍼보다 작은 크기로 땅콩 모양의 부력보조 용품</p><br>
+					</div>
+					<div data-role="collapsible">
+						<h3 class="equip_sub">오리발</h3>
+						<img src="img/duck.jpg">
+						<p>이름처럼 오리발 혹은 지느러미 형태의 신발로 수영시 추진력을 높여줌</p><br>
+					</div>
+					<div data-role="collapsible">
+						<h3 class="equip_sub">핸드 패들</h3>
+						<img src="img/handpaddle.jpg">
+						<p>훈련 보조 용품으로 손에 끼우는 형태<br>
+						수영시 물잡기가 용이하고 추진력을 높여줌</p><br>
+					</div>
+					<div data-role="collapsible">
+						<h3 class="equip_sub">스노클</h3>
+						<img src="img/snorkel.jpg">
+						<p>수면에서 호흡을 하며 수중 관찰을 할수 있도록 만들어진 수영용품으로 머리를 물속에 담근 채 숨을 쉴 수 있도록 도와줌</p><br>
+					</div>
+				</div>
+			
+		</div> <!-- content -->
+		<div data-role="footer" data-positon="fixed" id="ft2">
+			<h5 class="ft_txt">♡Happy Swim♡</h5>
+		</div> <!-- footer -->
+	</div> <!--  page3 수영 장비-->
+
+	<div data-role="page" id="page4">
+		<div data-role="header" data-add-back-btn="true" id="head3">
+			<a href="#page1" data-icon="carat-l" class="ui-btn-left">Home</a>
+			<h1>수영장</h1>
+			<a href="#" data-icon="carat-r" class="ui-btn-right">Next</a>
+			<div data-role="navbar" id="nav3">
+				<ul>
+					<li><a href="#page2">수영 영법</a></li>
+					<li><a href="#page3">수영 장비</a></li>
+					<li><a href="#">수영장</a></li>
+					<li><a href="#page5">커뮤니티</a></li>
+				</ul>
+			</div>
+		</div> <!-- header -->
+		<div data-role="content" id="poolserch">
+			<form name="form2">
+				<h3 style="text-align: center; color:#6EB0CC;">··· 지역별 수영장 찾기 ···</h3>
+				<div class="ui-body ui-body-a">
+					<label for="swimarea">지역 :</label>
+					<input type="search" name="swimarea" id="swimarea" value="" data-mini="true" placeholder="지역을 입력해주세요. ex)부산">
+				</div><br>
+				<ul data-role="listview" id="poollistview"></ul><br>
+				<div class="ui-body">
+					<fieldset class="ui-grid-a">
+						<div class="ui-block-a">
+							<input type="reset" name="cancel" id="cancel-btn" value="취소">
+						</div> <!-- ui-block-a -->
+						<div class="ui-block-b">
+							<input type="button" id="search-btn" name="search" value="검색">
+						</div> <!-- ui-block-b -->
+					</fieldset>
+				</div>
+			</form>	
+		</div> <!-- content -->
+		<div data-role="footer" data-positon="fixed" id="ft3">
+			<h5 class="ft_txt">♡Happy Swim♡</h5>
+		</div> <!-- footer 수영장-->
+	</div> <!--  page4 -->
+
+	<div data-role="page" id="page5">
+		<div data-role="panel" id="panel1" data-display="overlay">
+			<form>
+				<h3>로그인</h3>
+				<label for="name">ID :</label>
+				<input name="name" id="name" type="text" data-mini="true" data-clear-btn="true">
+				<label for="password">PW :</label>
+				<input name="password" id="password" type="password" data-mini="true" data-clear-btn="true">
+				<div class="ui-grid-a">
+					<div class="ui-block-a"><a href="#" data-role="button" data-rel="close" data-icon="delete">취소</a></div>
+					<div class="ui-block-b"><a href="#" data-role="button" data-rel="close" data-icon="check">확인</a></div>
+				</div>
+			</form>
+		</div>
+		<div data-role="header" data-add-back-btn="true" id="head4">
+			<a href="#page1" data-icon="carat-l" class="ui-btn-left">Home</a><h1>커뮤니티</h1>
+			<a href="#panel1" data-icon="user" class="ui-btn-right">Login</a>
+			<div data-role="navbar" id="nav4">
+				<ul>
+					<li><a href="#page2">수영 영법</a></li>
+					<li><a href="#page3">수영 장비</a></li>
+					<li><a href="#page4">수영장</a></li>
+					<li><a href="#">커뮤니티</a></li>
+				</ul>
+			</div>
+		</div> <!-- header -->
+		<div data-role="content" id="bull_4">
+			<a href="#page10"><button data-icon="tag">각종 후기 게시판</button></a>
+			<a href="#page11"><button data-icon="recycle">벼룩 게시판</button></a>
+			<a href="#page12"><button data-icon="location">지역 게시판</button></a>
+			<a href="#page13"><button data-icon="star">자유 게시판</button></a>
+		</div> <!-- content -->
+		<div data-role="footer" data-positon="fixed" id="ft4">
+			<h5 class="ft_txt">♡Happy Swim♡</h5>
+		</div> <!-- footer 커뮤니티-->
+	</div> <!--  page5 -->
+
+	<div data-role="page" id="page6">
+		<div data-role="header" data-add-back-btn="true" id="head5">
+			<a href="#page2" data-icon="carat-l" class="ui-btn-left">Back</a>
+			<h1>수영 영법</h1>	
+			<a href="#" data-icon="carat-r" class="ui-btn-right">Next</a>
+		</div> <!-- header -->
+		<div data-role="content" id="swimtype_fr">
+			<h2>자유형(Freestyle)</h2>
+			<img src="img/freestyle.gif">
+			<p>크롤 영법이라 일컫기도 함<br>
+			몸을 핀 저항이 적은 자세로 두 팔을 끊임없이 교대로 움직이며 물을 저어가고, 두 다리는 상하로 움직이며 물을 뒤편으로 밀어냄으로서 추진력을 얻는 가장 빠른 영법</p><br>		
+		</div> <!-- content -->
+		<div data-role="footer" data-positon="fixed" id="ft5">
+			<h5 class="ft_txt">♡Happy Swim♡</h5>
+		</div> <!-- footer -->
+	</div> <!--  page6 자유형 상세 -->
+
+	<div data-role="page" id="page7">
+		<div data-role="header" data-add-back-btn="true" id="head6">
+			<a href="#page2" data-icon="carat-l" class="ui-btn-left">Back</a>
+			<h1>수영 영법</h1>			
+			<a href="#" data-icon="carat-r" class="ui-btn-right">Next</a>
+		</div> <!-- header -->
+		<div data-role="content" id="swimtype_ba">
+			<h2>배영(Backstroke)</h2>
+			<img src="img/backstroke.gif">
+			<p>등을 수면에 대고 두 팔을 번갈아 동그랗게 저으며 발차기하는 영법</p><br>
+		</div> <!-- content -->
+		<div data-role="footer" data-positon="fixed" id="ft6">
+			<h5 class="ft_txt">♡Happy Swim♡</h5>
+		</div> <!-- footer -->
+	</div> <!--  page7 배영 상세-->
+
+	<div data-role="page" id="page8">
+		<div data-role="header" data-add-back-btn="true" id="head7">
+			<a href="#page2" data-icon="carat-l" class="ui-btn-left">Back</a>
+			<h1>수영 영법</h1>
+			<a href="#" data-icon="carat-r" class="ui-btn-right">Next</a>
+		</div> <!-- header -->
+		<div data-role="content" id="swimtype_br">
+			<h2>평영(Breaststroke)</h2>
+			<img src="img/breaststroke.gif">
+			<p>수면과 수평을 이루어 개구리처럼 양팔과 두 발을 오므렸다가 펴는 것을 반복하는 영법</p><br>
+		</div> <!-- content -->
+		<div data-role="footer" data-positon="fixed" id="ft7">
+			<h5 class="ft_txt">♡Happy Swim♡</h5>
+		</div> <!-- footer -->
+	</div> <!--  page8 평영 상세-->
+
+	<div data-role="page" id="page9">
+		<div data-role="header" data-add-back-btn="true" id="head8">
+			<a href="#page2" data-icon="carat-l" class="ui-btn-left">Back</a>
+			<h1>수영 영법</h1>
+			<a href="#" data-icon="carat-r" class="ui-btn-right">Next</a>
+		</div> <!-- header -->
+		<div data-role="content" id="swimtype_bu">
+			<h2>접영(Butterfly)</h2>
+			<img src="img/butterfly.gif">
+			<p>두 팔을 동시에 앞으로 뻗어 물을 끌어내리면서 양다리를 모아 위 아래로 움직이며 발등으로 물을 치면서 나아가는 영법</p><br>
+		</div> <!-- content -->
+		<div data-role="footer" data-positon="fixed" id="ft8">
+			<h5 class="ft_txt">♡Happy Swim♡</h5>
+		</div> <!-- footer -->
+	</div> <!--  page9 접영 상세-->
+
+	<div data-role="page" id="page10">
+		<div data-role="header" data-add-back-btn="true" id="head9">
+			<a href="#page5" data-icon="carat-l" class="ui-btn-left">Back</a>
+			<h1>각종 후기 게시판</h1>
+			<a href="#page11" data-icon="carat-r" class="ui-btn-right">Next</a>
+		</div> <!-- header -->
+		<div data-role="content" id="bull_re">
+			<ul data-role="listview" data-filter="true" data-filter-placeholder="검색 키워드를 입력하세요." id="review_bull">
+				<li data-role="list-divider">글 목록</li>
+				<li><a href="#"><p class="ui-li-aside">프리스타일</p>
+					<h2>어깨가 아픈데 사이즈가 맞는건가요?</h2><br>
+					<p>이번에 새로 구매한 수영복이 입을 때 어깨가 너무 아파요ㅠㅠ 사이즈가 작은거겠죠?</p></a></li>
+				<li><a href="#"><p class="ui-li-aside">호핑투어잼</p>
+					<h2>해외 호텔수영장 다녀왔어요!!</h2><br
+					><p>다낭가서 250m 수영장 다녀왔어요~~~!! 한번에 완주했는데 너무 재밌었어요ㅎㅎ </p></a></li>
+				<li><a href="#"><p class="ui-li-aside">미스부산</p>
+					<h2>수경 바꿔야 할까요?</h2><br>
+					<p>몇 번 쓰지도 않았는데 벌써 뿌얘요.. 벌써 바꿔야 할지 고민이네요</p></a></li>
+				<li><a href="#"><p class="ui-li-aside">수영쓰</p>
+					<h2>오리손(??)</h2><br>
+					<p>손에 끼우는 물갈퀴? 같은 거 사봤는데 신세계입니다!</p></a></li>
+				</ul>
+				<ul data-role="listview" id="review_bullli"></ul><br><br>
+
+				<!-- <li><a href="#"><img src="img/sajik.jpeg">자유 수영 후기<span class="ui-li-count">new!</span></a></li>
+				<li><a href="#"><img src="img/swimglass.jpg">수경 추천~~!<span class="ui-li-count">new!</span></a></li> -->
+			
+			<div>
+				<a href="#page14"><input type="button" id="write-btn" value="글쓰기" data-inline="true"></a>
+			</div>
+		</div> <!-- content -->
+		<div data-role="footer" data-positon="fixed" id="ft9">
+			<h5 class="ft_txt">♡Happy Swim♡</h5>
+		</div> <!-- footer -->
+	</div> <!--  page10 후기 게시판-->
+
+	<div data-role="page" id="page11">
+		
+		<div data-role="header" data-add-back-btn="true" id="head10">
+			<a href="#page5" data-icon="carat-l" class="ui-btn-left">Back</a>
+			<h1>벼룩 게시판</h1>
+			<a href="#page12" data-icon="carat-r" class="ui-btn-right">Next</a>
+		</div> <!-- header -->
+		<div data-role="content" id="bull_ma">
+			<ul data-role="listview" data-filter="true" data-filter-placeholder="검색 키워드를 입력하세요." id="market_bull">
+				<li data-role="list-divider">글 목록</li>
+				<li><a href="#"><p class="ui-li-aside">블랙밀크티</p>
+					<h2>실리콘 수모 팔아요</h2><br>
+					<p>나이키 실리콘 수모 팝니다.</p></a>
+				</li>
+				<li><a href="#"><p class="ui-li-aside">내맘</p>
+					<h2>벼룩 구매 후기~^^</h2><br>
+					<p>벼룩에서 수영복 새제품으로 구매했는데 사이즈도 딱 맞고 너무 예뻐요 자주 이용해야겠어요ㅎㅎ</p></a></li>
+				<li><a href="#"><p class="ui-li-aside">돌핀</p>
+					<h2>펑키타 수영복 새제품 판매</h2><br>
+					<p>영국 직구해서 샀는데 아쉽게도 사이즈가 안맞아요ㅠ 방출합니다..</p></a></li>
+				<li><a href="#"><p class="ui-li-aside">냥배추</p>
+					<h2>우주 매물 방출 </h2><br>
+					<p>나이키 헤이즈 28 사이즈 방출합니다. 3달 전에 구매해놓고 입지도 못하고 모셔놨던 상품입니다.</p></a></li>
+			</ul>
+			<ul data-role="listview" id="market_bullli"></ul><br><br>
+			<div>
+				<a href="#page14"><input type="button" id="write-btn" value="글쓰기" data-inline="true"></a>
+			</div>
+		</div> <!-- content -->
+		<div data-role="footer" data-positon="fixed" id="ft10">
+			<h5 class="ft_txt">♡Happy Swim♡</h5>
+		</div> <!-- footer -->
+	</div> <!--  page11 벼룩 게시판-->
+
+	<div data-role="page" id="page12">
+		<div data-role="header" data-add-back-btn="true" id="head11">
+			<a href="#page5" data-icon="carat-l" class="ui-btn-left">Back</a>
+			<h1>지역 게시판</h1>
+			<a href="#page13" data-icon="carat-r" class="ui-btn-right">Next</a>
+		</div> <!-- header -->
+		<div data-role="content" id="bull_ar">
+			<ul data-role="listview" data-filter="true" data-filter-placeholder="검색 키워드를 입력하세요." id="area_bull">
+				<li data-role="list-divider">글 목록</li>
+				<li><a href="#"><p class="ui-li-aside">수영초보</p>
+					<h2>수영 다닐 때 파마는 어떻게 하세요?</h2><br>
+					<p>파마 후에 바로 수영 가진 못 할 것 같고.. 다들 어떻게 하시나요??</p></a></li>
+				<li><a href="#"><p class="ui-li-aside">수린이</p>
+					<h2>8월부터 수영 가요~!</h2><br>
+					<p>처음 수영 시작하는 수린입니다. 드디어 수영 등록했어요^^*</p></a></li>
+				<li><a href="#"><p class="ui-li-aside">산너머산</p>
+					<h2>숏핀? 롱핀?</h2><br>
+					<p>발목이 안 좋아서 숏핀을 껴볼까 하는 데 어떤게 좋을까요??</p></a></li>
+				<li><a href="#"><p class="ui-li-aside">샤니</p>
+					<h2>강사님의 영향이 얼마나 중요한가요?</h2><br>
+					<p>자유 수영과 강습을 고민하고 있습니다. 다들 어떻게 생각하시는지 궁금합니다.</p></a></li>
+			</ul>
+			<ul data-role="listview" id="area_bullli"></ul><br><br>
+			<div>
+				<a href="#page14"><input type="button" id="write-btn" value="글쓰기" data-inline="true"></a>
+			</div>
+		</div> <!-- content -->
+		<div data-role="footer" data-positon="fixed" id="ft11">
+			<h5 class="ft_txt">♡Happy Swim♡</h5>
+		</div> <!-- footer -->
+	</div> <!--  page12 지역게시판-->
+
+	<div data-role="page" id="page13">
+		<div data-role="header" data-add-back-btn="true" id="head12">
+			<a href="#page5" data-icon="carat-l" class="ui-btn-left">Back</a>
+			<h1>자유 게시판</h1>
+			<a href="#" data-icon="carat-r" class="ui-btn-right">Next</a>
+		</div> <!-- header -->
+		<div data-role="content" id="bull_fr">
+			<ul data-role="listview" data-filter="true" data-filter-placeholder="검색 키워드를 입력하세요." id="free_bull">
+				<li data-role="list-divider">글 목록</li>
+				<li><a href="#"><p class="ui-li-aside">뿡뿡이</p>
+					<h2>부산 벙개 해요</h2><br>
+					<p><8월 3일 토요일 사직수영장에서 벙개 하실 분 모집합니다~></p></a></li>
+				<li><a href="#"><p class="ui-li-aside">성심당쵝오</p>
+					<h2>대전에 키즈수영장</h2><br>
+					<p>키즈 수영장 추천 좀 해주세요~ 생존 수영도 다 가르쳐 주겠죠??</p></a></li>
+				<li><a href="#"><p class="ui-li-aside">비비드</p>
+					<h2>오리발 키링 공구하실 분?</h2><br>
+					<p>지역은 부산입니다. 광주 FINA 오리발 키링 구매하려고 하는데 공동 구매 하실 분 계실까요??</p></a></li>
+			</ul>
+			<ul data-role="listview" id="free_bullli"></ul><br><br>
+			<div>
+				<a href="#page14"><input type="button" id="write-btn" value="글쓰기" data-inline="true"></a>
+			</div>
+		</div> <!-- content -->
+		<div data-role="footer" data-positon="fixed" id="ft12">
+			<h5 class="ft_txt">♡Happy Swim♡</h5>
+		</div> <!-- footer -->
+	</div> <!--  page13 자유게시판-->
+
+	<div data-role="page" id="page14">
+		<div data-role="header" data-add-back-btn="true" id="head13">
+			<a href="#page10" data-icon="carat-l" class="ui-btn-left" data-rel="back">Back</a>
+			<h1>글쓰기</h1>
+		</div> <!-- header -->
+		<div data-role="content" id="write_con">
+			<form>
+				<div class="ui-body">
+					<label for="booktype2">분류</label>
+					<select name="community" id="community" data-native-menu="false" data-inline="true">
+						<option value="미정">미정</option>
+						<option value="후기">후기</option>
+						<option value="벼룩">벼룩</option>
+						<option value="지역">지역</option>
+						<option value="자유">자유</option>
+					</select>
+					<label for="w_id">작성자</label>
+					<input type="text" name="name" id="w_name" placeholder="ID 혹은 이름을 입력해주세요.">
+					<label for="w_title">글제목</label>
+					<input type="text" name="title" id="w_title" placeholder="제목을 입력해주세요.">
+					<label for="w_cont">글내용</label>
+					<textarea cols="25" rows="10" name="content" id="w_content" placeholder="내용을 입력해주세요."></textarea>
+				</div>
+				<div class="ui-body">
+					<fieldset class="ui-grid-b">
+						<div class="ui-block-a">
+							<input type="reset" id="w_cancel" value="취소">
+						</div> <!-- ui-block-a -->
+						<div class="ui-block-b">
+							<input type="button" id="w_submit" value="완료">
+						</div> <!-- ui-block-b -->
+						<div class="ui-block-c">
+							<a href="#" data-rel="back"><input type="button" id="w_list" value="글 목록"></a>
+						</div> <!-- ui-block-c -->
+					</fieldset>
+				</div>
+			</form>
+		</div> <!-- content -->
+		<div data-role="footer" data-positon="fixed" id="ft13">
+			<h5 class="ft_txt">♡Happy Swim♡</h5>
+		</div> <!-- footer -->
+	</div> <!--  page14 게시판 글쓰기-->
+
+</body>
+</html>

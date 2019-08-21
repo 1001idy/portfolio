@@ -1,0 +1,173 @@
+	@import url('https://fonts.googleapis.com/css?family=Noto+Sans+KR&display=swap');
+
+	a
+	{
+		text-decoration: none;
+	}
+	#maintitle /*SWIMGo*/
+	{
+		font-size: 1.4rem;
+		color: white;
+	}
+	.ft_txt/*♡Happy Swim♡*/
+	{		
+		font-size: 0.8rem;
+		color: #6B7980;
+	}
+	#mainimg /*스타트 이미지*/
+	{
+		max-width: 100%;
+		margin-bottom: 80px;
+		margin-top: 60px;		
+	}
+	
+	#swimtype img /*수영 영법 썸네일*/
+	{
+		max-width: 80px;
+	}
+	#swimtype_fr , #swimtype_ba , #swimtype_br , #swimtype_bu 
+	{
+		background-color: white;
+	}
+	#swimtype_fr h2, #swimtype_ba h2, #swimtype_br h2, #swimtype_bu h2 /*수영 영법 제목*/
+	{
+		font-family: 'Noto Sans KR', sans-serif;
+		color: #6EB0CC;
+	}
+	#swimtype_fr p, #swimtype_ba p, #swimtype_br p, #swimtype_bu p /*수영 영법 제목*/
+	{
+		font-family: 'Noto Sans KR', sans-serif;
+		color: #324F5C;
+		line-height: 1.6;
+	}
+	#swimtype_fr img, #swimtype_ba img, #swimtype_br img, #swimtype_bu img /*수영 영법 이미지*/
+	{
+		max-width: 100%;
+	}
+	#equip, #poolserch, #bull_4
+	{
+		background-color: white;
+	}
+	#equip_list1 a, #equip_list2 a, #equip_list3 a, #equip_list4 a
+	{
+		font-family: 'Noto Sans KR', sans-serif;
+		color: #324F5C;
+		background: white;
+	}
+	#equip_list1 p, #equip_list2 p, #equip_list3 p, #equip_list4 p
+	{
+		font-family: 'Noto Sans KR', sans-serif;
+		color: #324F5C;
+		font-size: 0.9rem;
+	}
+	#equip_list1 img, #equip_list2 img, #equip_list3 img, #equip_list4 img
+	{
+		max-width: 100%;	
+	}
+	.equip_sub a
+	{
+		font-size: 0.9rem;
+	}
+	#poolserch h3
+	{
+		font-family: 'Noto Sans KR', sans-serif;
+	}
+	#panel1 a, #panel1 h3
+	{
+		font-family: 'Noto Sans KR', sans-serif;
+	}
+	#bull_4 a button
+	{
+		font-family: 'Noto Sans KR', sans-serif;
+		background-color: white;
+		color: #324F5C;
+	}
+	#bull_re, #bull_ma, #bull_ar, #bull_fr, #write_con
+	{
+		background-color: #fff;
+	}
+	#bull_re a, #bull_ma a, #bull_ar a, #bull_fr a , #write_con a, #write_con label
+	{
+		font-family: 'Noto Sans KR', sans-serif;
+		color: #324F5C;
+	}
+	#main_header /*메인 헤더바*/
+	{
+		background-color: #87d3ff;
+	}
+	#head1, #head2, #head3, #head4, #head5, #head6, #head7, #head8, #head9, #head10, #head11, #head12, #head13
+	{
+		background-color: #D6F3FF;
+		color: #324F5C;
+		font-weight: lighter;
+		font-family: 'Noto Sans KR', sans-serif;
+	}
+	#head1 a, #head2 a, #head3 a, #head4 a, #head5 a, #head6 a, #head7 a, #head8 a, #head9 a, #head10 a, #head11 a, #head12 a, #head13 a /*back, next 버튼*/
+	{
+		background-color: #6B7980;
+		color: white;
+	}
+	#main_ft, #ft1, #ft2, #ft3, #ft4, #ft5, #ft6, #ft7, #ft8, #ft9, #ft10, #ft11, #ft12, #ft13 /*푸터바*/
+	{
+		background-color: #D6F3FF;
+	}
+	#main_cont, #swimtype, #swimtype ul li a/*메인 콘텐츠부분*/
+	{
+		background-color: white;
+		color: #324F5C;
+		font-family: 'Noto Sans KR', sans-serif;
+	}
+	#main_nav ul li a, #nav1 ul li a, #nav2 ul li a, #nav3 ul li a, #nav4 ul li a /*헤더 네비바*/
+	{	
+		background-color: white;
+		color: #324F5C;
+		font-family: 'Noto Sans KR', sans-serif;
+	}
+	#review_bullli, #market_bullli, #area_bullli, #free_bullli
+	{
+		margin-top: 13px;
+	}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	}
