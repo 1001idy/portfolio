@@ -254,7 +254,13 @@
 		content:"";
 		clear:both;/*float 해제, block 속성일때 해제해야 다른 css적용이 가능하다*/
 	/*}*/
-
+@media screen and (min-width:768px)
+{
+	.f_map
+	{
+		padding-bottom: 80px;
+	}
+}
 @media screen and (min-width:1000px) {
 	.f_map_sub{
 		margin: 0;

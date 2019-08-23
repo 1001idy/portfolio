@@ -152,6 +152,7 @@ a
 
 .m_mainimg
 {
+	display: block;
 	position: relative;
 	background-position: center;
 	background-size: cover;
@@ -178,7 +179,7 @@ a
 .exp_title h1
 {
 	font-family: 'Open Sans', sans-serif;
-	font-size: 2.5rem;
+	font-size: 2.2rem;
 	color: white;
 	margin-top: 15px;
 	letter-spacing: -1px;
@@ -211,6 +212,14 @@ a
 	display: none;
 }
 
+@media screen and (min-width:768px)
+{
+	.m_mainimg
+	{
+		padding-top: 50px;
+		height: 798px;
+	}
+}
 
 @media screen and (min-width:1050px) /*웹 영역*/
 {
@@ -425,13 +434,14 @@ a
 	top:0; left: 300px;
 	width: 100%;
 	height: 900px;
+	padding-top: 50px;
 }
 .m_exp /*메인 불투명박스*/
 {	
 	clear: both;
 	display: block;
 	width: 750px;
-	height: 260px;
+	height: 280px;
 	background-color: rgba(2, 28, 46, 0.8);
 	position: absolute;
 	top:270px;
@@ -440,7 +450,7 @@ a
 }
 .exp_title h1 /* DESIGN THE FUTURE */
 {
-	margin-top: 15px;
+	margin-top: 17px;
 	margin-left: 35px;
 	font-size: 2.7rem;
 	text-shadow: 4px 8px 2px black;
@@ -465,7 +475,7 @@ a
 }
 .exp_cont h3 /* Companies Creating New Things …*/
 {
-	margin-top: -13px;
+	margin-top: -11px;
 	margin-bottom: 27px;
 	font-size: 1.2rem;
 	text-shadow: 2px 1px 1px black;
@@ -474,6 +484,7 @@ a
 {
 	width: 590px;
 	display: block;
-	line-height: 1.9;
+	line-height: 2;
 	font-size: 0.9rem;
+	padding-top: 8px;
 }

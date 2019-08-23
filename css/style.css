@@ -32,10 +32,11 @@ header
   width: 100%;
   height: 150px;
   background-color: white;
+  z-index: 9999;
 }
 header h3 /*INDEX*/
 {
-  font-family: 'Montserrat', sans-serif, '돋움', '나눔고딕'; 
+  font-family: 'Montserrat', sans-serif,'나눔고딕','돋움','굴림';
   text-align: center;
   font-size: 1.6em;
   font-weight: lighter;
@@ -74,7 +75,7 @@ header h5 /*CONTACT(웹크기에서 보여짐)*/
 }
 .m_contact p /*모바일 메뉴창 안에 CONTACT*/
 {
-  font-family: 'Montserrat', sans-serif, '돋움', '나눔고딕'; 
+  font-family: 'Montserrat', sans-serif,'나눔고딕','돋움','굴림';
   color: #114559;
   margin:60px auto;
   text-align: center;
@@ -85,44 +86,99 @@ header h5 /*CONTACT(웹크기에서 보여짐)*/
 {
   display: none;
   position: relative;
-  width: 100%;
-  height: auto;
-  border: 1px solid #eee;
-  background-color: lightgray;
-  vertical-align: center;
+  width: 100%; height: 100%;
+  border-top: 1px solid #eee;
+  background-color: gainsboro;
+  /*vertical-align: center;*/
+  
 }
 #show1
 {
   text-align: center;
   margin-bottom: 50px;
+  margin-top: 8%;
+  overflow: auto;
 }
-#showpage #show1 img /*스마일 이미지*/
+#showpage #show1 #photo img 
 {
+  /*width: 250px; height: 280px;
   margin-top: 50px;
-  text-align: center;
-  border: 10px solid pink;
-  border-radius: 140px;
+  text-align: center;*/
+  display: none;
+}
+#show1 .about
+{
+  width: 100%; height: 220px;
+  margin: 0 auto;
+}
+#show1 .about .ct-txt-r , #show1 .about .ct-txt-l
+{
+  padding-top: 15px;
+}
+#show1 .about:nth-child(3)
+{
+  padding-bottom: 20px;
 }
 #showpage h1
 {
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Montserrat', sans-serif,'나눔고딕','돋움','굴림';
   text-align: center;
-  font-size: 3rem;
+  font-size: 1.6rem;
   font-weight: bold;
   text-align: center;
-  color: hotpink;
+  color: #114559;
   margin-bottom: 20px;
+  margin-top: 20px;
 }
-#showpage p
+#showpage hr
 {
-    font-size: 1.2rem;
-   margin-bottom: 10px;
+  background-color: #114559;
+  width: 270px; height: 1px;
+  margin: 5px auto;
 }
+#show1 .about .ct-txt-l
+{
+  font-family: '함초롬돋움','나눔고딕','고딕','돋움','굴림';
+  display: inline-block;
+  text-align: right;
+  padding-right: 3%;
+}
+#show1 .about .ct-txt-r
+{
+  font-family: '함초롬돋움','나눔고딕','고딕','돋움','굴림';
+  text-align: left;
+  display: inline-block;
+  margin-bottom: 10px;
+  border-left: 1px solid #114559;
+  padding-left: 3%;
+}
+
+#show1 .about:nth-child(3) .ct-txt-l p
+{
+  margin-bottom: 37px;
+}
+#show1 .about .ct-txt-r p, #show1 .about:nth-child(2) .ct-txt-l p, 
+#show1 .about:nth-child(4) .ct-txt-l p
+{
+  margin-bottom: 15px;
+}
+
 
 #fp-nav, .fp-sr-only, .fp-slidesNav
 {
-  /*display: none;*/
   visibility: hidden;
+}
+.fp-controlArrow
+{
+  top:35%;
+}
+.fp-controlArrow.fp-prev
+{
+  border-width: 20px 16px 20px 0;
+}
+.fp-controlArrow.fp-next
+{
+  border-width: 20px 0 20px 16px;
 }
 
 .section 
@@ -133,42 +189,46 @@ header h5 /*CONTACT(웹크기에서 보여짐)*/
 .section .slide
 {
   width: 100%; height: 100%;
-  padding-bottom: -100px;
 }
-.section .slide img
+.m-tap-page
 {
-  width: 100%; height: 60%;
-  margin: 0;
-  padding: 0;
+  width: 100%; height: 100%;
+}
+
+.section .slide .m-tap-page img
+{
+  width: 100%; height: 50%;
+  margin: 0; padding: 0;
   vertical-align : bottom;
 }
 
-.section h1
+.section > h1
 {
   text-align: center;
   display: block;
   font-size: 1.3rem; 
-  font-family: 'Montserrat', sans-serif, '돋움', '나눔고딕'; 
+  font-family: 'Montserrat', sans-serif,'나눔고딕','돋움','굴림';
   font-weight: lighter; font-style: italic;
   padding-bottom: 15px;
 }
-.section .slide a
+.section .slide
+{
+  padding-top: 4%;
+}
+.section .slide .m-tap-page a
 {
   display:block;
   position:relative;
   width:100%;
   height:100%;
 }
-
-.section .slide a:before
+.section .slide .m-tap-page a:before
 {
   display:block;
   position:absolute;
-  top:0;
-  left:0;
+  top:0; left:0;
   z-index:10;
-  width:100%;
-  height:60%;
+  width:100%; height:50%;
   background:#114559;
   content:"";
   opacity:0; /*지금은 안보여는 투명상태*/
@@ -178,12 +238,11 @@ header h5 /*CONTACT(웹크기에서 보여짐)*/
 {
   opacity:0.86; /*투명도가 조금 있는 색상보임*/
 }
-.section .txt
+.section .m-tap-page .txt
 {
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Montserrat', sans-serif,'나눔고딕','돋움','굴림';
   position:absolute;
-  top:27%;
-  left:37%;
+  top:22%; left:37%;
   z-index:20; /* 글자가 a:before 색상위로 올라감*/
   opacity:0; /*완전 투명*/
   transition:all 0.3s; /* all : 모든 속성을 변화 시킴  0.3s : 0.3초 만에 완결 */
@@ -193,17 +252,17 @@ header h5 /*CONTACT(웹크기에서 보여짐)*/
 {
   opacity:1; /*완전불투명*/
 }
-.txt h4
+.m-tap-page .txt h4
 {
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Montserrat', sans-serif,'나눔고딕','돋움','굴림';
   margin-bottom:8px;
   font-size:1.2rem;
   color:#fff;
   font-weight:normal;
 }
-.txt p
+.m-tap-page .txt p
 {
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Montserrat', sans-serif,'나눔고딕','돋움','굴림';
   font-size:0.9rem;
   color:#fff;
 }
@@ -218,7 +277,7 @@ header h5 /*CONTACT(웹크기에서 보여짐)*/
   padding: 0;
 }
 .footer .contact {
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Montserrat', sans-serif,'나눔고딕','돋움','굴림';
   color:white;
   font-size: 0.7rem;
   text-align: center;
@@ -226,6 +285,29 @@ header h5 /*CONTACT(웹크기에서 보여짐)*/
   margin: 0;
   padding: 0;
 }
+.w-page
+{
+  display: none;
+}
+
+/*.gotop
+{
+  display: block;
+  z-index: 600;
+}
+.gotop a
+{
+  position: fixed;
+  bottom: 2%; right: 3%;
+  width: 50px; height: 50px;
+  background-color: lightgray;
+  border-radius: 50%;
+  border: 2px solid red;
+  background-image: url(../img/icon_up_gr.png);
+  background-repeat: no-repeat;
+  background-size: 50%;
+  background-position: center;
+}*/
 
 
 @media screen and (min-width:764px)/*탭용*/ {
@@ -241,29 +323,29 @@ header
 .w_menu
 {
   padding-left: 10%;
-  padding-top: 17%;
+  padding-top: 20%;
 }
 header h3 /*INDEX*/
 {
   font-size: 200%;
   text-align: left;
-  margin-bottom: 45px;
+  margin-bottom: 30%;
   font-weight: lighter;
-  margin-left: 10px;
+  margin-left: 5%;
 }
 
 header h5 /*CONTACT*/
 {
+  font-family: 'Montserrat', sans-serif,'나눔고딕','돋움','굴림';
   display: block;
   font-size: 130%;
   font-weight: lighter;
-  margin-left: 10px;
+  margin-left: 5%;
 }
 header p /*CONTACT*/
 {
   display: none;
 }
-
 #openmenu, .m_contact /*웹에서는 햄버거버튼, 모바일 메뉴창 안보임*/
 {
   display: none;
@@ -274,144 +356,284 @@ header p /*CONTACT*/
   height: 969px;
   float: right;
 }
-#showpage #show1 img
+/*#showpage #show1 img
 {
-  top: 5%;
-  left: 40%;
+  top: 5%; left: 40%;
+}*/
+#show1
+{
+  margin-top: 10%;
 }
 #fp-nav, .fp-sr-only, .fp-slidesNav
 {
   visibility: visible;
 }
+#fp-nav ul li .fp-tooltip
+{
+  color: gray;
+}
+#fp-nav ul li
+{
+  margin-bottom: 15px;
+}
+.fp-slidesNav
+{
+  left: 44% !important;
+}
+.fp-slidesNav.fp-top
+{
+  top: 20%; 
+}
+.fp-controlArrow
+{
+  top:57%;
+}
+.fp-controlArrow.fp-prev
+{
+  border-width: 25px 25px 25px 0;
+}
+.fp-controlArrow.fp-next
+{
+  border-width: 25px 0 25px 25px;
+}
+
 #fullpage
 {
   float: right;
   width: 75%;
   margin: 0 auto;
   padding: 0;
-  padding-right: 3%;
+
 }
-#fullpage .section:nth-child(2) .slide, #fullpage .section:nth-child(3) .slide
+/*#fullpage .section:nth-child(2) .slide, #fullpage .section:nth-child(3) .slide
 {
   margin-top: 4%;
 }
 #fullpage .section:nth-child(4) .slide
 {
   margin-top: 15%;
-}
+}*/
 .section 
 {
   margin: 0 auto;
   width: 75%;
+  /*margin-top: 10%;*/
 }
-.section h1
+.section > h1
 {
-  padding-top: 18%;
+  padding-top: 30%;
 }
 .section .slide
 {
   padding-top: 8%;
- 
 }
-.section .txt
+.section .m-tap-page .txt 
 {
   top: 24%; left: 40%;
 }
-.section .slide img
+.section .slide .m-tap-page img
 {
   width: 100%; height: 55%;
 }
-.section .slide a:before
+.section .slide .m-tap-page a:before
 {
   height: 55%;
 }
-/*.program-cols
-{
-  padding: 0px 0px 100px 50px;
-}
-.program-cols li
-{
-  float: left;
-  width: 48%;
-  padding: 1%;
-  background-color: lightgray;
-}
-.program 
-{
-  position: relative;
-  display: inline-block;
-  width: 25%;
-  float: right;
-  width: 100%; height: 100%;
-  background-color: pink;
-}
-.program img
-{
- width: 80%; height:80%;
-}
-.program .txt
-{
-  top:40%;
-  left:40%;
-}*/
-
 .footer
 {
   clear: both;
 }
+.w-page
+{
+  display: none;
+}
+
+
 
 }
 
 @media screen and (min-width:1024px)/*웹용*/ {
 
-/*header h3, header h5
-{
-  margin-left: 25px;
-}
 header
 {
-  width: 15%;
-}*/
+  width: 18%;
+}
 #showpage
 {
-  width: 75%;
+  width: 80%;
+}
+#show1
+{
+  margin-top: 8%;
+}
+#showpage hr
+{
+
+  width: 350px; height: 1px;
+
+}
+#show1 .about .ct-txt-l
+{
+  padding-right: 2%;
+}
+#show1 .about .ct-txt-r
+{
+
+  padding-left: 2%;
 }
 #fullpage
 {
   margin: 0 auto;
-  width: 75%;
+  width: 80%;  
+}
+#fp-nav 
+{
+  margin-left: 1%;
+}
+.fp-slidesNav.fp-top
+{
+  top: 10%; 
 }
 .section 
 {
-  width: 60%;
+  width: 100%;
+  margin: 0 auto;
+  padding-left: 8%;
+
 }
-/*.section h1
+.section > h1
 {
-  padding-top: 18%;
+  display: none;
 }
-.section .txt
+.slide .w-page
 {
-  top: 26%; left: 43%;
+  display: block;
+  width: 100%; height: 100%;
+  /*padding-top: 120px;*/
+  
+  margin-top: 8%;
 }
-.section .slide img
+.slide .w-page .w-img
 {
-  width: 100%; height: 60%;
+  text-indent: -9999px;
+  float: left;
+  width: 50%; height: 50%;
 }
-.section .slide a:before
+#fullpage .section .w-page .w-img
 {
-  height: 60%;
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  background-position: center;
 }
-.section .slide
+/*#fullpage .section:nth-child(1) .w-page .w-img
 {
-  padding-top: 4%;
- 
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  background-position: center;
 }*/
+#fullpage .section:nth-child(1) .slide:nth-child(1) .w-page .w-img
+{
+  background-image: url(../img/indigopage.png);
+}
+#fullpage .section:nth-child(1) .slide:nth-child(2) .w-page .w-img
+{
+  background-image: url(../img/hyungjipage.png);
+}
+#fullpage #pro .slide:nth-child(1) .w-page .w-img
+{
+  background-image: url(../img/teampro-img.png);
+  background-size: 110% 110%;
+  
+}
+#fullpage #pro .slide:nth-child(2) .w-page .w-img
+{
+  background-image: url(../img/solopro.png);
+  background-size: 110% 110%;
+}
+#fullpage #mob .slide:nth-child(1) .w-page .w-img
+{  background-image: url(../img/tmon-m.png); 
+background-size: 120% 110%;}
+#fullpage #mob .slide:nth-child(2) .w-page .w-img
+{  background-image: url(../img/starbucks_m.png); 
+background-size: 120% 110%;}
+#fullpage #web .slide:nth-child(1) .w-page .w-img
+{  background-image: url(../img/pagpan-w-img.png); }
+#fullpage #web .slide:nth-child(2) .w-page .w-img
+{  background-image: url(../img/pallax-w-img.png); }
+.slide .w-page span
+{
+  content: "";
+  float: left;
+  width: 1px; height: 45%;
+  margin-right: 5%;
+  margin-left: -30px;
+  display: inline-block;
+  background-color: gray;
+}
+.slide .w-page .w-txt
+{
+  display: inline-block;
+  float: left;
+  width: 45%; height: 200px;
+  left: 20%; bottom: 0%; 
+  margin-top: 160px;
+}
+.slide .w-page .w-txt h5
+{
+  font-size: 1.7rem; font-weight: lighter; font-family: 'Montserrat', sans-serif,'나눔고딕','돋움','굴림';
+}
+.slide .w-page .w-txt h1
+{
+  font-size: 2.6rem; font-weight:normal; font-family: arial, helvetica, sans-serif;
+}
+.slide .w-page .w-txt h3
+{
+  font-size: 1.5rem; font-weight:normal; font-family: 'Montserrat', sans-serif,'나눔고딕','돋움','굴림';
+}
+.slide .w-page .w-txt .w-btn
+{
+  margin-top: 20px;
+}
+.slide .w-page .w-txt .w-btn a
+{
+  box-sizing: border-box;
+  width: 180px; height: 30px;
+  vertical-align: middle;
+  line-height: 30px;
+  border: 1px solid gray;
+  padding: 10px;
+  margin-right: 10px;
+  font-family: 'Montserrat', sans-serif,'나눔고딕','돋움','굴림';
+}
+.slide .w-page .w-txt .w-btn a:hover
+{
+  background-color: #114559;
+  color:#fff;
+}
+.fp-controlArrow
+{
 
+}
+.fp-controlArrow.fp-prev
+{
+  left: 4%;
+  border-color: transparent #114559 transparent transparent;
+}
+.fp-controlArrow.fp-next
+{
+  right: 8%;
+  border-color: transparent transparent transparent #114559;
+}
+
+.m-tap-page
+{
+  display: none;
+}
 
 
 }
-
-@media screen and (min-width:1400px)/*와이드용*/ {
+/*
+@media screen and (min-width:1400px) {
 
 #showpage
 {
@@ -430,11 +652,15 @@ header
 {
   padding-top: 7%;
 }
+.part
+{
+  display: block;
+}
 
 
 }
 
-@media screen and (min-width:1500px)/*와이드용*/ {
+@media screen and (min-width:1500px) {
 
 header
 {
@@ -463,4 +689,4 @@ header
   left: 43%;
 }
 
-}
+}*/
