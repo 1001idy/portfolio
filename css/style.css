@@ -119,6 +119,10 @@ header h5 /*CONTACT(웹크기에서 보여짐)*/
 {
   padding-bottom: 20px;
 }
+#show1 .about:nth-child(4)
+{
+  display: none;
+}
 #showpage h1
 {
   font-family: 'Montserrat', sans-serif,'나눔고딕','돋움','굴림';
@@ -363,6 +367,10 @@ header p /*CONTACT*/
 #show1
 {
   margin-top: 10%;
+}
+#show1 .about:nth-child(4)
+{
+  display: block;
 }
 #fp-nav, .fp-sr-only, .fp-slidesNav
 {
