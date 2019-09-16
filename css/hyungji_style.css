@@ -280,6 +280,15 @@ img
 	line-height: 30px;
 	font-size: 1.1rem;
 }
+#company-txt .view-btn
+{
+	width: 100px;
+	margin-top: 10px;
+	background-color: transparent;
+	padding: 10px;
+	border: 1px solid black;
+	cursor: pointer;
+}
 #w-joy-ul-wrap
 {display: none;}
 #joy-ul-wrap
@@ -441,7 +450,7 @@ img
 
 .notice
 {
-	margin-top: -60px;
+	/*margin-top: -60px;*/
 	border-top: 1px solid lightgray;
 	border-bottom: 1px solid lightgray;
 }
